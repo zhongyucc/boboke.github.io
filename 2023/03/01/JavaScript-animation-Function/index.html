@@ -4,9 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS日期对象Date(), boboke">
-    <meta name="description" content="Date()日期对象Date() 日期对象  是一个构造函数  必须使用new  来调用创建我们的日期对象
-12345678// 1.使用Date  如果没有参数 返回当前系统的当前时间	var date = new Date();	con">
+    <meta name="keywords" content="JavaScript_animation_Function, boboke">
+    <meta name="description" content="动画函数封装1.动画实现原理&amp;#x3D;&amp;#x3D;核心原理&amp;#x3D;&amp;#x3D;：通过定时器setInterval()不断移动盒子位置。
+实现步骤：
+
+获得盒子当前位置
+让盒子在当前位置加上一个移动距离
+利用定时器不断重复这个操作
+加一">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS日期对象Date() | boboke</title>
+    <title>JavaScript_animation_Function | boboke</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +296,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS日期对象Date()</h1>
+                    <h1 class="description center-align post-title">JavaScript_animation_Function</h1>
                 </div>
             </div>
         </div>
@@ -349,7 +354,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-28
+                    2023-03-01
                 </div>
                 
 
@@ -358,7 +363,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    838
                 </div>
                 
 
@@ -380,71 +385,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Date-日期对象"><a href="#Date-日期对象" class="headerlink" title="Date()日期对象"></a>Date()日期对象</h1><p>Date() 日期对象  是一个构造函数  必须使用new  来调用创建我们的日期对象</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.使用Date  如果没有参数 返回当前系统的当前时间</span></span><br><span class="line">	<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date);</span><br><span class="line"><span class="comment">// 2.参数常用的写法 数字型 2019, 10, 01 或者是 字符串型 &#x27;2019-10-1 08:08:08&#x27; </span></span><br><span class="line">	<span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">2019</span>, <span class="number">10</span>, <span class="number">1</span>);  </span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date1);  <span class="comment">//返回的是 11月 不是 10月</span></span><br><span class="line">	<span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="string">&#x27;2019-10-1 8:8:8&#x27;</span>);  <span class="comment">//最常用的</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date);</span><br></pre></td></tr></table></figure>
+                <h1 id="动画函数封装"><a href="#动画函数封装" class="headerlink" title="动画函数封装"></a>动画函数封装</h1><h2 id="1-动画实现原理"><a href="#1-动画实现原理" class="headerlink" title="1.动画实现原理"></a>1.动画实现原理</h2><p>&#x3D;&#x3D;<strong>核心原理</strong>&#x3D;&#x3D;：通过定时器setInterval()不断移动盒子位置。</p>
+<p>实现步骤：</p>
+<ol>
+<li>获得盒子当前位置</li>
+<li>让盒子在当前位置加上一个移动距离</li>
+<li>利用定时器不断重复这个操作</li>
+<li>加一个结束定时的条件</li>
+<li><strong>注意此元素需要添加定位，才能使用element.style.left</strong></li>
+</ol>
+<h2 id="2-动画函数简单封装"><a href="#2-动画函数简单封装" class="headerlink" title="2.动画函数简单封装"></a>2.动画函数简单封装</h2><p>注意函数需要传递2个参数，&#x3D;&#x3D;动画对象&#x3D;&#x3D;和&#x3D;&#x3D;移动到的距离。&#x3D;&#x3D;</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: aqua;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">150px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">150px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: bisque;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">top</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>夏雨荷<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> span = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;span&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 简单动画函数封装obj目标对象 target 目标位置</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">animate</span>(<span class="params">obj, target</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">var</span> timer = <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (obj.<span class="property">offsetLeft</span> &gt;= target) &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="built_in">clearInterval</span>(timer);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        obj.<span class="property">style</span>.<span class="property">left</span> = obj.<span class="property">offsetLeft</span> + <span class="number">1</span> + <span class="string">&#x27;px&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">      &#125;, <span class="number">30</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 调用函数</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">animate</span>(div, <span class="number">300</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">animate</span>(span, <span class="number">200</span>);</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>Date 对象和Math对象不一样，他是一个构造函数，所以我们需要实例化后才能使用</li>
-<li>Date 实例用来处理日期和时间</li>
-</ul>
-<h2 id="Date-方法的使用"><a href="#Date-方法的使用" class="headerlink" title="Date()方法的使用"></a>Date()方法的使用</h2><h3 id="1-获取当前时间必须实例化"><a href="#1-获取当前时间必须实例化" class="headerlink" title="1.获取当前时间必须实例化"></a>1.获取当前时间必须实例化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(now);</span><br></pre></td></tr></table></figure>
+<h2 id="3-动画函数给不同元素记录不同定时器"><a href="#3-动画函数给不同元素记录不同定时器" class="headerlink" title="3.动画函数给不同元素记录不同定时器"></a>3.动画函数给不同元素记录不同定时器</h2><p>如果多个元素都使用这个动画函数，每次都要 var 声明定时器，我们可以给不同的元素使用不同的定时器(自己专门用自己的定时器).</p>
+<p>核心原理：利用JS是一门动态语言，可以很方便的给当前对象添加属性。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: aqua;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">span</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">150px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">150px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: bisque;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">top</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>点击夏雨荷才走<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>夏雨荷<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> span = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;span&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;button&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 简单动画函数封装obj目标对象 target 目标位置</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">animate</span>(<span class="params">obj, target</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 当我们不断的点击按钮，这个元素的速度会越来越快，因为开启了太多的定时器</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 解决方案就是 让我们只有一个定时器执行</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 先清除以前的定时器</span></span></span><br><span class="line"><span class="language-javascript">      <span class="built_in">clearInterval</span>(obj.<span class="property">timer</span>);</span></span><br><span class="line"><span class="language-javascript">      obj.<span class="property">timer</span> = <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (obj.<span class="property">offsetLeft</span> &gt;= target) &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// 停止动画 本质上是停止定时器</span></span></span><br><span class="line"><span class="language-javascript">          <span class="built_in">clearInterval</span>(obj.<span class="property">timer</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">        obj.<span class="property">style</span>.<span class="property">left</span> = obj.<span class="property">offsetLeft</span> + <span class="number">1</span> + <span class="string">&#x27;px&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">      &#125;, <span class="number">30</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 调用函数</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">animate</span>(div, <span class="number">300</span>);</span></span><br><span class="line"><span class="language-javascript">    btn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">animate</span>(span, <span class="number">200</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="2-Date-构造函数的参数"><a href="#2-Date-构造函数的参数" class="headerlink" title="2.Date()构造函数的参数"></a>2.Date()构造函数的参数</h3><p>如果括号里面有时间，就返回参数里面的时间，例如日期格式字符串为 ‘2019-5-1’,可以写成 new Date(‘2019-5-1’)或者 new Date(‘2019&#x2F;5&#x2F;1’)</p>
-<h2 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h2><p>我们想要 2019-9-8 8:8:8 格式的日期，该怎么办？</p>
-<p>需要获取日期指定的部分，所以我们要手动的得到这种方式。</p>
-<table>
-<thead>
-<tr>
-<th>方法名</th>
-<th>说明</th>
-<th>代码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>getFullYear()</td>
-<td>获取当年</td>
-<td>dObj.getFullYear()</td>
-</tr>
-<tr>
-<td>getMonth()</td>
-<td>获取当月(0-11)</td>
-<td>dObj.getMonth()</td>
-</tr>
-<tr>
-<td>getDate()</td>
-<td>获取当天日期</td>
-<td>dObj.getDate()</td>
-</tr>
-<tr>
-<td>getDay()</td>
-<td>获取星期几(周日0 到周六 6)</td>
-<td>dObj.getDay()</td>
-</tr>
-<tr>
-<td>getHours()</td>
-<td>获取当前小时</td>
-<td>dObj.getHours()</td>
-</tr>
-<tr>
-<td>getMinutes()</td>
-<td>获取当前分钟</td>
-<td>dObj.getMinutes()</td>
-</tr>
-<tr>
-<td>getSconds()</td>
-<td>获取当前秒钟</td>
-<td>dObj.getSconds()</td>
-</tr>
-</tbody></table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们写一个 2019年 5月 1日 星期三</span></span><br><span class="line">	<span class="keyword">var</span> year = date.<span class="title function_">getFullYear</span>();</span><br><span class="line">	<span class="keyword">var</span> month = date.<span class="title function_">getMonth</span>() + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">var</span> dates = dates.<span class="title function_">getDate</span>();</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="string">&#x27;星期日&#x27;</span>, <span class="string">&#x27;星期一&#x27;</span>, <span class="string">&#x27;星期二&#x27;</span>,<span class="string">&#x27;星期三&#x27;</span>, <span class="string">&#x27;星期四&#x27;</span>, <span class="string">&#x27;星期五&#x27;</span>, <span class="string">&#x27;星期六&#x27;</span>];</span><br><span class="line">	<span class="keyword">var</span> day = date.<span class="title function_">getDay</span>();</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;今天是：&#x27;</span> + year + <span class="string">&#x27;年&#x27;</span> + month + <span class="string">&#x27;月&#x27;</span> + dates + <span class="string">&#x27;日&#x27;</span> + arr[day]);</span><br></pre></td></tr></table></figure>
+<h2 id="4-缓动效果原理"><a href="#4-缓动效果原理" class="headerlink" title="4.缓动效果原理"></a>4.缓动效果原理</h2><p>缓动动画就是让元素运动速度有所变化，最常见的是让速度慢慢停下来</p>
+<p>思路：</p>
+<ol>
+<li>让盒子每次移动的距离慢慢变小，速度就会慢慢落下来。</li>
+<li>核心算法：(目标值 - 现在的位置) &#x2F; 10 作为每次移动距离  步长</li>
+<li>停止的条件是：让当前盒子位置等于目标位置就停止定时器</li>
+<li>注意步长值需要取整</li>
+</ol>
+<h3 id="5-动画函数添加回调函数"><a href="#5-动画函数添加回调函数" class="headerlink" title="5.动画函数添加回调函数"></a>5.动画函数添加回调函数</h3><p>&#x3D;&#x3D;<strong>回调函数原理</strong>&#x3D;&#x3D;：函数可以作为一个参数，将这个函数作为参数传到另一个函数里面，当那个函数执行完之后，再执行传进去的这个函数，这个过程就叫做&#x3D;&#x3D;回调&#x3D;&#x3D;</p>
+<p>回调函数写的位置：定时器结束的位置</p>
 
-<h3 id="日期格式化时分秒"><a href="#日期格式化时分秒" class="headerlink" title="日期格式化时分秒"></a>日期格式化时分秒</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装一个函数返回当前的时分秒 格式 08:08:08</span></span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">getTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> times = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">        <span class="keyword">var</span> h = time.<span class="title function_">getHours</span>();</span><br><span class="line">        h = h &lt; <span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span> + h : h;</span><br><span class="line">        <span class="keyword">var</span> m = time.<span class="title function_">getMinutes</span>();</span><br><span class="line">        m = m &lt; <span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span>+ m : m;</span><br><span class="line">        <span class="keyword">var</span> s = time.<span class="title function_">getSeconds</span>();</span><br><span class="line">        s = s &lt; <span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span>+ s : s;</span><br><span class="line">        <span class="keyword">return</span> h + <span class="string">&#x27;:&#x27;</span> + m + <span class="string">&#x27;:&#x27;</span> + s;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getTime</span>());</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取日期的总的毫秒形式"><a href="#获取日期的总的毫秒形式" class="headerlink" title="获取日期的总的毫秒形式"></a>获取日期的总的毫秒形式</h3><p>Date 对象是基于1970年1月1日（世界标准时间）起得毫秒数</p>
-<p>我们经常利用总的毫秒数计算时间，因为它更精确</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获得Date总的毫秒数（时间戳）  不是当前时间的毫秒数 而是距离1970年1月1日过了多少毫秒数</span></span><br><span class="line"><span class="comment">// 1.通过 valueOf() getTime()</span></span><br><span class="line">	<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date.<span class="title function_">valueOf</span>());</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date.<span class="title function_">getTime</span>());</span><br><span class="line"><span class="comment">// 2.简单的写法（最常用的写法）</span></span><br><span class="line">	<span class="keyword">var</span> date1 = +<span class="keyword">new</span> <span class="title class_">Date</span>();  <span class="comment">// +new Date()  返回的就是总的毫秒数</span></span><br><span class="line"><span class="comment">// 3.H5 新增的 获得总的毫秒数</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>());</span><br></pre></td></tr></table></figure>
-
-<h2 id="倒计时案例"><a href="#倒计时案例" class="headerlink" title="倒计时案例"></a>倒计时案例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 核心算法：输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能看着时分秒相减</span></span><br><span class="line"><span class="comment">// 用时间戳来做，用户输入时间总的毫秒数减去现在时间的总的毫秒数，得到的就是剩余时间的毫秒数</span></span><br><span class="line"><span class="comment">// 把剩余时间总的毫秒数转换为天、时、分、秒（时间戳转换为时分秒）</span></span><br><span class="line"><span class="comment">// 转换公式如下：</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    d = parseInt(总秒数/60/60/24); // 计算天数</span></span><br><span class="line"><span class="comment">    h = parseInt(总秒数/60/60%24); // 计算小时</span></span><br><span class="line"><span class="comment">    m = parseInt(总秒数/60/%60);   // 计算分数</span></span><br><span class="line"><span class="comment">    s = parseInt(总秒数%60);       // 计算当前秒数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">conutDown</span>(<span class="params">time</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> nowTime = +<span class="keyword">new</span> <span class="title class_">Date</span>() <span class="comment">// 返回的是当前时间总的毫秒数</span></span><br><span class="line">    <span class="keyword">var</span> inputTime = + <span class="keyword">new</span> <span class="title class_">Date</span>(time); <span class="comment">// 返回的是用户输入时间总的毫秒数</span></span><br><span class="line">    <span class="keyword">var</span> times = (inputTime - nowTime) / <span class="number">1000</span>; <span class="comment">// time是剩余时间总的秒数</span></span><br><span class="line">    <span class="keyword">var</span> d = <span class="built_in">parseInt</span>(times / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>);  <span class="comment">// 天</span></span><br><span class="line">    d = d &lt; <span class="number">10</span> ? <span class="number">0</span> + d : d;</span><br><span class="line">    <span class="keyword">var</span> h = <span class="built_in">parseInt</span>(times / <span class="number">60</span> / <span class="number">60</span> % <span class="number">24</span>);     <span class="comment">// 时</span></span><br><span class="line">    h = h &lt; <span class="number">10</span> ? <span class="number">0</span> + h : h;</span><br><span class="line">    <span class="keyword">var</span> m = <span class="built_in">parseInt</span>(times / <span class="number">60</span> % <span class="number">60</span>);       <span class="comment">// 分</span></span><br><span class="line">    m = m &lt; <span class="number">10</span> ? <span class="number">0</span> + m : m;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">parseInt</span>(times % <span class="number">60</span>);            <span class="comment">// 当前的秒</span></span><br><span class="line">    s = s &lt; <span class="number">10</span> ? <span class="number">0</span> + s : s;</span><br><span class="line">    <span class="keyword">return</span> d + <span class="string">&#x27;天&#x27;</span> + h + <span class="string">&#x27;时&#x27;</span> + m + <span class="string">&#x27;分&#x27;</span> + s + <span class="string">&#x27;秒&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">conutDown</span>(<span class="string">&#x27;2022-10-1 8:8:8&#x27;</span>));</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -470,7 +437,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhongyucc.github.io/2023/02/28/Javascript%E6%97%B6%E9%97%B4%E5%AF%B9%E8%B1%A1/">http://zhongyucc.github.io/2023/02/28/Javascript%E6%97%B6%E9%97%B4%E5%AF%B9%E8%B1%A1/</a>
+                    <a href="http://zhongyucc.github.io/2023/03/01/JavaScript-animation-Function/">http://zhongyucc.github.io/2023/03/01/JavaScript-animation-Function/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -592,17 +559,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/01/JavaScript-string-methods/">
+                <a href="/2023/03/01/JavaScript-animation-Function/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="JavaScript字符串操作方法">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="JavaScript_animation_Function">
                         
-                        <span class="card-title">JavaScript字符串操作方法</span>
+                        <span class="card-title">JavaScript_animation_Function</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -612,9 +580,63 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-01
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
+                    </a>
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/01/JavaScript-Function/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JavaScript_函数">
+                        
+                        <span class="card-title">JavaScript_函数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -638,43 +660,6 @@
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/02/17/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-17
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Bobo
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
