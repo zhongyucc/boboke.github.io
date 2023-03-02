@@ -1,0 +1,1537 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="C++_基础, boboke">
+    <meta name="description" content="常量作用：用于记录程序中不可更改的数据
+C++定义常量两种方式
+
+#define宏常量:#define 常量名 常量值
+&amp;#x3D;&amp;#x3D;通常在文件上方定义&amp;#x3D;&amp;#x3D;，表示一个常量
+
+
+const修饰的变量const 数">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>C++_基础 | boboke</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">boboke</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>主页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">boboke</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			主页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #ee6e73;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">C++_基础</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
+                            </a>
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C/" class="post-category">
+                                C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-03-02
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.2k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p><strong>作用：</strong>用于记录程序中不可更改的数据</p>
+<p>C++定义常量两种方式</p>
+<ol>
+<li><strong>#define</strong>宏常量:<code>#define 常量名 常量值</code><ul>
+<li>&#x3D;&#x3D;通常在文件上方定义&#x3D;&#x3D;，表示一个常量</li>
+</ul>
+</li>
+<li><strong>const</strong>修饰的变量<code>const 数据类型 常量名 = 常量值</code><ul>
+<li>&#x3D;&#x3D;通常在变量定义前加关键字const&#x3D;&#x3D;，修饰该变量为常量，不可修改</li>
+</ul>
+</li>
+</ol>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.#define 宏常量</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Day 7</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//day = 8; // 报错，宏常量是不可修改的</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;一周有&quot;</span> &lt;&lt; Day &lt;&lt; <span class="string">&quot;天&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 2.const修饰变量</span></span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> month = <span class="number">12</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;一年有：&quot;</span> &lt;&lt; month &lt;&lt; <span class="string">&quot;个月&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//month = 13; // 报错，常量是不可修改的</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="C-关键字"><a href="#C-关键字" class="headerlink" title="C++关键字"></a>C++关键字</h1><table>
+<thead>
+<tr>
+<th><strong>asm</strong></th>
+<th><strong>do</strong></th>
+<th>if</th>
+<th>return</th>
+<th>typedef</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>double</td>
+<td>inline</td>
+<td>short</td>
+<td>typeid</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>dynamic_cast</td>
+<td>int</td>
+<td>signed</td>
+<td>typename</td>
+</tr>
+<tr>
+<td>break</td>
+<td>else</td>
+<td>long</td>
+<td>sizeof</td>
+<td>union</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>mutable</td>
+<td>static</td>
+<td>unsigned</td>
+</tr>
+<tr>
+<td>carch</td>
+<td>explicit</td>
+<td>namespace</td>
+<td>static_cast</td>
+<td>using</td>
+</tr>
+<tr>
+<td>char</td>
+<td>export</td>
+<td>new</td>
+<td>struct</td>
+<td>virtual</td>
+</tr>
+<tr>
+<td>class</td>
+<td>extern</td>
+<td>operator</td>
+<td>switch</td>
+<td>void</td>
+</tr>
+<tr>
+<td>const</td>
+<td>false</td>
+<td>private</td>
+<td>template</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const_cast</td>
+<td>float</td>
+<td>protected</td>
+<td>this</td>
+<td>wchar_t</td>
+</tr>
+<tr>
+<td>default</td>
+<td>friend</td>
+<td>register</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>delete</td>
+<td>goto</td>
+<td>reinterpret</td>
+<td>try</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="标识符命名规则"><a href="#标识符命名规则" class="headerlink" title="标识符命名规则"></a>标识符命名规则</h1><p><strong>作用：</strong>C++规定给标识符（变量，常量）命名时，有一套自己的规则</p>
+<ul>
+<li>标识符不能是关键字</li>
+<li>标识符只能由字母、数字、下划线组成</li>
+<li>第一个字符必须为字母或下划线</li>
+<li>标识符中字母区分大小写</li>
+</ul>
+<h6 id="建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读"><a href="#建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读" class="headerlink" title="建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读"></a>建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读</h6><h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>C++规定在创建一个变量或者常量时，必须要指出相应的数据类型，否则无法给变量分配内存</p>
+<h2 id="1-整型"><a href="#1-整型" class="headerlink" title="1.整型"></a>1.整型</h2><p><strong>作用：</strong>整型变量表示的是&#x3D;&#x3D;整数类型&#x3D;&#x3D;的数据</p>
+<p>C++中能够表示整型的类型有以下几种方式，<strong>区别在于所占内存空间不同</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>short(短整型)</td>
+<td>2字节</td>
+<td>(-2^15^-2^15^-1)</td>
+</tr>
+<tr>
+<td>int(整型)</td>
+<td>4字节</td>
+<td>(-2^31^-2^31^-1)</td>
+</tr>
+<tr>
+<td>long(长整型)</td>
+<td>Windows为4字节，Linux为4字节(32位),8字节(64位)</td>
+<td>(-2^31^-2^31^-1)</td>
+</tr>
+<tr>
+<td>long long(长长整型)</td>
+<td>8字节</td>
+<td>(-2^63^-2^63^-1)</td>
+</tr>
+</tbody></table>
+<h2 id="2-sizeof关键字"><a href="#2-sizeof关键字" class="headerlink" title="2.sizeof关键字"></a>2.sizeof关键字</h2><p><strong>作用：</strong>利用sizeof关键字可以统计数据类型所占内存大小</p>
+<p><strong>语法：</strong>sizeof(数据类型 &#x2F; 变量)</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">short</span> num1 = <span class="number">10</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;short占用的空间为&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(num1) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> num2 = <span class="number">20</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;int占用的空间为&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(num2) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="type">long</span> num3 = <span class="number">30</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;long占用的空间为&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(num3) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="type">long</span> <span class="type">long</span> num4 = <span class="number">40</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;long long占用的空间为&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(num4) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-实型（浮点型）"><a href="#3-实型（浮点型）" class="headerlink" title="3.实型（浮点型）"></a>3.实型（浮点型）</h2><p><strong>作用：</strong>用于&#x3D;&#x3D;表示小数&#x3D;&#x3D;</p>
+<p>浮点型变量分为两种：</p>
+<p>1.单精度float</p>
+<p>2.双精度double</p>
+<p>两者的<strong>区别</strong>在于表示的有效数字范围不同。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+<th>有效数字范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4字节</td>
+<td>7位有效数字</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8字节</td>
+<td>15-16位有效数字</td>
+</tr>
+</tbody></table>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1. 单精度 float</span></span><br><span class="line">	<span class="comment">// 2. 双精度 double</span></span><br><span class="line"></span><br><span class="line">	<span class="type">float</span> f1 = <span class="number">3.1415926f</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;单精度float：&quot;</span> &lt;&lt; f1 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="type">double</span> d2 = <span class="number">3.1415926</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;双精度double：&quot;</span> &lt;&lt; d2 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;单精度float占用内存大小:&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(f1) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;双精度double占用内存大小:&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(d2) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 科学计数法</span></span><br><span class="line">	<span class="type">float</span> f2 = <span class="number">3e2</span>; <span class="comment">// 3*10^2</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;f2=&quot;</span> &lt;&lt; f2 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="type">float</span> f3 = <span class="number">3e-2</span>; <span class="comment">// 3*0.1^2</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;f3=&quot;</span> &lt;&lt; f3 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-字符型"><a href="#4-字符型" class="headerlink" title="4.字符型"></a>4.字符型</h2><p><strong>作用：</strong>字符型变量用于显示单个字符</p>
+<p><strong>语法：</strong><code>char ch = &#39;a&#39;;</code></p>
+<h6 id="注意1：在显示字符型变量时，用单引号将字符括起来，不要用双引号"><a href="#注意1：在显示字符型变量时，用单引号将字符括起来，不要用双引号" class="headerlink" title="注意1：在显示字符型变量时，用单引号将字符括起来，不要用双引号"></a>注意1：在显示字符型变量时，用单引号将字符括起来，不要用双引号</h6><h6 id="注意2：单引号内只能有一个字符，不可以是字符串"><a href="#注意2：单引号内只能有一个字符，不可以是字符串" class="headerlink" title="注意2：单引号内只能有一个字符，不可以是字符串"></a>注意2：单引号内只能有一个字符，不可以是字符串</h6><ul>
+<li>C和C++中字符型变量只占用&#x3D;&#x3D;1个字节&#x3D;&#x3D;。</li>
+<li>字符型变量并不是吧字符本身放到内存中存储，而是将对应的ASCII编码放入到存储单元</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//1.字符型变量创建方式</span></span><br><span class="line">	<span class="type">char</span> ch = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">	cout &lt;&lt; ch &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//2.字符型变量所占内存大小</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;char字符型变量所占内存：&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(<span class="type">char</span>) &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//3.字符型变量常见错误</span></span><br><span class="line">	<span class="comment">//char ch2 = &quot;b&quot;; // 创建字符型变量的时候，要引用单引号</span></span><br><span class="line">	<span class="comment">//char chh2 = &#x27;abcdef&#x27;; // 创建字符型变量时候，单引号内只能有一个字符</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//4.字符型变量对应ASCII编码</span></span><br><span class="line">	<span class="comment">//a-97</span></span><br><span class="line">	<span class="comment">//A-65</span></span><br><span class="line">	cout &lt;&lt; (<span class="type">int</span>)ch &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-字符串型"><a href="#5-字符串型" class="headerlink" title="5.字符串型"></a>5.字符串型</h2><p><strong>作用：</strong>用于表示一串字符</p>
+<p><strong>两种风格</strong></p>
+<ol>
+<li><p><strong>C风格字符串：</strong><code>char 变量名[]=&quot;字符串值&quot;</code></p>
+</li>
+<li><p><strong>C++风格字符串：</strong><code>string 变量名 = &quot;字符串值&quot;</code></p>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1.C风格字符串</span></span><br><span class="line">	<span class="comment">// 注意事项1：char 字符串名 []</span></span><br><span class="line">	<span class="comment">// 注意事项2：等号后面要用双引号 包含起来字符串</span></span><br><span class="line">	<span class="type">char</span> str[] = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">	cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2.C++风格字符串</span></span><br><span class="line">	<span class="comment">// 包含一个头文件 #include&lt;string&gt;</span></span><br><span class="line">	string str2 = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">	cout &lt;&lt; str2 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="注意：1-C风格字符串要用双引号括起来"><a href="#注意：1-C风格字符串要用双引号括起来" class="headerlink" title="注意：1.C风格字符串要用双引号括起来"></a>注意：1.C风格字符串要用双引号括起来</h6><h6 id="2-C-风格字符串，需要加入头文件-x3D-x3D-include-x3D-x3D"><a href="#2-C-风格字符串，需要加入头文件-x3D-x3D-include-x3D-x3D" class="headerlink" title="2.C++风格字符串，需要加入头文件&#x3D;&#x3D;#include &#x3D;&#x3D;"></a>2.C++风格字符串，需要加入头文件&#x3D;&#x3D;#include <string>&#x3D;&#x3D;</h6></li>
+</ol>
+<h2 id="6-布尔类型-bool"><a href="#6-布尔类型-bool" class="headerlink" title="6.布尔类型 bool"></a>6.布尔类型 bool</h2><p><strong>作用：</strong>布尔数据类型代表真或假的值</p>
+<p>bool类型只有两个值：</p>
+<ul>
+<li>true   — 真(本质是1)</li>
+<li>false  — 假(本质是0)</li>
+</ul>
+<p><strong>bool类型占&#x3D;&#x3D;1个字节&#x3D;&#x3D;大小</strong></p>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//1.创建bool数据类型</span></span><br><span class="line">	<span class="type">bool</span> flag = <span class="literal">true</span>; <span class="comment">// true代表真</span></span><br><span class="line">	cout &lt;&lt; flag &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	flag = <span class="literal">false</span>; <span class="comment">// false代表假</span></span><br><span class="line">	cout &lt;&lt; flag &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 本质上 1代表真 0代表假</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2。查看bool类型所占内存</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;bool类型所占内存空间：&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(<span class="type">bool</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-数据的输入"><a href="#7-数据的输入" class="headerlink" title="7.数据的输入"></a>7.数据的输入</h2><p><strong>作用：</strong>用于从键盘获取数据</p>
+<p><strong>关键字：</strong>cin</p>
+<p><strong>语法：</strong><code>cin &gt;&gt; 变量</code></p>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// 1.整型</span></span><br><span class="line">	<span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请给整型变量a赋值&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; a;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;整型变量a=&quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2.浮点型</span></span><br><span class="line">	<span class="type">float</span> f = <span class="number">3.14f</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请给浮点变量f赋值&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; f;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;浮点型变量f=&quot;</span> &lt;&lt; f &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 3.字符型</span></span><br><span class="line">	<span class="type">char</span> ch = a;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请给字符变量ch赋值&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; ch;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;字符型变量ch=&quot;</span> &lt;&lt; ch &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 4.字符串型</span></span><br><span class="line">	string str = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请给字符串变量str赋值&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; str;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;字符串型变量str=&quot;</span> &lt;&lt; str &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 5.布尔类型</span></span><br><span class="line">	<span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请给布尔类型flag赋值&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; flag; <span class="comment">// bool类型只要是非0的值都代表真</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;布尔类型型变量flag=&quot;</span> &lt;&lt; flag &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="程序流程结构"><a href="#程序流程结构" class="headerlink" title="程序流程结构"></a>程序流程结构</h1><p>C&#x2F;C++支持最基本的三种程序运行机构：&#x3D;&#x3D;顺序结构、选择结构、循环结构&#x3D;&#x3D;</p>
+<ul>
+<li>顺序结构：程序按顺序执行，不发生跳转</li>
+<li>选择结构：依据条件是否满足，有选择的执行相应功能</li>
+<li>循环结构：依据条件是否满足，循环多次执行某段代码</li>
+</ul>
+<h2 id="1-选择结构"><a href="#1-选择结构" class="headerlink" title="1.选择结构"></a>1.选择结构</h2><h3 id="1-1-if语句"><a href="#1-1-if语句" class="headerlink" title="1.1 if语句"></a>1.1 if语句</h3><p><strong>作用：</strong>执行满足条件的语句</p>
+<p>if语句的三种形式</p>
+<ul>
+<li>单行格式if语句</li>
+<li>多行格式if语句</li>
+<li>多条件的if语句</li>
+</ul>
+<ol>
+<li><p>单行格式if语句：<code>if(条件)&#123;条件满足执行的语句&#125;;</code></p>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// 选择结构 单行if语句</span></span><br><span class="line">	<span class="comment">// 用户输入分数，如果分数大于600，视为考上一本大学，在屏幕上输出</span></span><br><span class="line">	<span class="type">int</span> score = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入你的分数&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//1.用户输入分数</span></span><br><span class="line">	cin &gt;&gt; score;</span><br><span class="line">	<span class="comment">//2.打印用户输入的分数</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;您的分数为&quot;</span> &lt;&lt; score &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//3.判断分数是否大于600，如果大于，那么输出</span></span><br><span class="line">	<span class="keyword">if</span> (score &gt; <span class="number">600</span>)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;你考上一本了&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多行格式if语句：<code>if(条件)&#123; 条件满足执行的语句 &#125;else&#123;条件不满足执行的语句&#125;;</code></p>
+<p>示例:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 选择结构 - 多行if语句</span></span><br><span class="line">	<span class="comment">// 输入考试分数，如果大于600，视为考上一本大学，在屏幕上输出</span></span><br><span class="line">	<span class="comment">// 如果没考上一本大学，打印未考上一本大学</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1.输入考试分数</span></span><br><span class="line">	<span class="type">int</span> score = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入一个考试分数&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; score;</span><br><span class="line">	<span class="comment">// 2.提示用户输入分数</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;您输入的分数为&quot;</span> &lt;&lt; score &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 3.判断 如果大于600，打印考上一本，否则打印未考上一本</span></span><br><span class="line">	<span class="keyword">if</span> (score &gt; <span class="number">600</span>)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;一本&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;没考上&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多条件的if语句：<code>if(条件1)&#123;条件1满足执行的语句&#125;else if(条件2)&#123;条件2满足执行的语句&#125;...else&#123;都不满足执行的语句&#125;</code></p>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// 选择结构 多条件if语句</span></span><br><span class="line">	<span class="comment">// 输入一个考试分数，如果大于600分，视为考上一本大学，在屏幕上输出</span></span><br><span class="line">	<span class="comment">// 大于500，视为考上二本大学，屏幕输出</span></span><br><span class="line">	<span class="comment">// 大于400，视为考上三本大学，屏幕输出</span></span><br><span class="line">	<span class="comment">// 小于等于400，视为未考上本科，屏幕输出</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1.用户输入的分数</span></span><br><span class="line">	<span class="type">int</span> score = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入你的分数&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cin &gt;&gt; score;</span><br><span class="line">	<span class="comment">// 2.提示用户输入的分数</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;您输入的分数为&quot;</span> &lt;&lt; score &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 3.判断</span></span><br><span class="line">	<span class="keyword">if</span> (score &gt; <span class="number">600</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;你考上了一本&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (score &gt; <span class="number">500</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;你考上了二本&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (score &gt; <span class="number">400</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;你考上了三本&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (score &lt;= <span class="number">400</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;你没考上本科&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="1-2-三目运算符"><a href="#1-2-三目运算符" class="headerlink" title="1.2 三目运算符"></a>1.2 三目运算符</h3><p>   <strong>作用：</strong>通过三目运算符实现简单的判断</p>
+<p>   <strong>语法：</strong><code>表达式1 ? 表达式2 : 表达式3</code></p>
+<p>   <strong>解释：</strong></p>
+<p>   如果表达式1的值为真，执行表达式2，并返回表达式2的结果；</p>
+<p>   如果表达式1的值为假，执行表达式3，并返回表达式3的结果。</p>
+<h3 id="1-3-switch语句"><a href="#1-3-switch语句" class="headerlink" title="1.3 switch语句"></a>1.3 switch语句</h3><p><strong>作用：</strong>执行条件分支语句</p>
+<p><strong>语法：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">case</span> 结果<span class="number">1</span>: 执行语句; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> 结果<span class="number">2</span>: 执行语句; <span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>: 执行语句; <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-循环结构"><a href="#2-循环结构" class="headerlink" title="2.循环结构"></a>2.循环结构</h2><h3 id="2-1-while循环语句"><a href="#2-1-while循环语句" class="headerlink" title="2.1 while循环语句"></a>2.1 while循环语句</h3><p><strong>作用：</strong>满足循环条件，执行循环语句</p>
+<p><strong>语法：</strong><code>while(循环条件)&#123;循环语句&#125;</code></p>
+<p><strong>解释：</strong>&#x3D;&#x3D;只要循环条件的结果为真，就执行循环语句&#x3D;&#x3D;</p>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (num&lt;<span class="number">9</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; num &lt;&lt; endl;</span><br><span class="line">		num++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>案例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ctime&gt;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// 添加随机数种子 作用利用当前系统时间生成随机数，防止每次随机数都一样</span></span><br><span class="line">	<span class="built_in">srand</span>((<span class="type">unsigned</span> <span class="type">int</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1.系统生成随机数</span></span><br><span class="line">	<span class="type">int</span> num = <span class="built_in">rand</span>() % <span class="number">100</span> + <span class="number">1</span>; <span class="comment">//  rand()%100  0 - 99 随机数 rand()%100+1 1-100</span></span><br><span class="line">	<span class="comment">// 2.玩家进行猜测</span></span><br><span class="line">	<span class="type">int</span> val = <span class="number">0</span>; <span class="comment">// 玩家输入</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请输入数字&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">while</span> (val != num)&#123;</span><br><span class="line">		cin &gt;&gt;val;</span><br><span class="line">		<span class="keyword">if</span> (val &gt; num)&#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;猜大了&quot;</span> &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (val &lt; num)&#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;猜小了&quot;</span> &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;猜对了&quot;</span> &lt;&lt; endl;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-do…while循环语句"><a href="#2-2-do…while循环语句" class="headerlink" title="2.2 do…while循环语句"></a>2.2 do…while循环语句</h3><p><strong>作用：</strong>满足循环条件，执行循环语句</p>
+<p><strong>语法：</strong><code>do&#123; 循环语句 &#125;while&#123;循环条件&#125;;</code></p>
+<p><strong>注意：</strong>与while的区别在于&#x3D;&#x3D;do…while会先执行一次循环语句&#x3D;&#x3D;，再判断循环条件。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		cout &lt;&lt; num &lt;&lt; endl;</span><br><span class="line">		num++;</span><br><span class="line">	&#125; <span class="keyword">while</span> (num&lt;<span class="number">10</span>);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-for循环语句"><a href="#2-3-for循环语句" class="headerlink" title="2.3 for循环语句"></a>2.3 for循环语句</h3><p><strong>作用：</strong>满足循环条件，执行循环语句</p>
+<p><strong>语法：</strong><code>for(起始表达式;条件表达式;末尾循环体)&#123;循环语句;&#125;</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// for循环</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++)&#123;</span><br><span class="line">		cout &lt;&lt; i&lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-跳转语句"><a href="#3-跳转语句" class="headerlink" title="3. 跳转语句"></a>3. 跳转语句</h2><h3 id="3-1-break语句"><a href="#3-1-break语句" class="headerlink" title="3.1 break语句"></a>3.1 break语句</h3><p><strong>作用：</strong>用于跳出&#x3D;&#x3D;选择结构&#x3D;&#x3D;或者&#x3D;&#x3D;循环结构&#x3D;&#x3D;</p>
+<p>break使用的时机：</p>
+<ul>
+<li>出现在switch条件语句中，作用是终止case并跳出switch</li>
+<li>出现在循环语句中，作用是跳出当前的循环语句</li>
+<li>出现在嵌套循环中，跳出最近的内层循环语句</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// break的使用时机</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1.出现在switch语句中</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;请选择副本难度&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;1、普通&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;2、中等&quot;</span> &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;3、困难&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> select = <span class="number">0</span>; <span class="comment">// 创建选择结果的变量</span></span><br><span class="line">	cin &gt;&gt; select; <span class="comment">// 等待用户输入</span></span><br><span class="line">	<span class="keyword">switch</span> (select)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		 cout &lt;&lt; <span class="string">&quot;您选择了普通难度&quot;</span> &lt;&lt; endl;</span><br><span class="line">		 <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		 cout &lt;&lt; <span class="string">&quot;您选择了中等难度&quot;</span> &lt;&lt; endl;</span><br><span class="line">	     <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">	&#123;</span><br><span class="line">	     cout &lt;&lt; <span class="string">&quot;您选择了困难难度&quot;</span> &lt;&lt; endl;</span><br><span class="line">	     <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-continue语句"><a href="#3-2-continue语句" class="headerlink" title="3.2 continue语句"></a>3.2 continue语句</h3><p><strong>作用：</strong>在&#x3D;&#x3D;循环语句&#x3D;&#x3D;中，跳过本次循环中余下尚未执行的语句，继续执行下一次循环</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++)&#123;</span><br><span class="line">		<span class="comment">// 偶数不输出</span></span><br><span class="line">		<span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-goto语句"><a href="#3-3-goto语句" class="headerlink" title="3.3 goto语句"></a>3.3 goto语句</h3><p><strong>作用：</strong>可以无条件跳转语句</p>
+<p><strong>语法：</strong><code>goto 标记;</code></p>
+<p><strong>解释：</strong>如果标记的名称存在，执行到goto语句时，会跳转到标记的位置。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;1、xxxx&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">goto</span> FLAG;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;2、xxxx&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;3、xxxx&quot;</span> &lt;&lt; endl;</span><br><span class="line">	FLAG:</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;4、xxxx&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-数组"><a href="#4-数组" class="headerlink" title="4.数组"></a>4.数组</h2><h3 id="4-1-概述"><a href="#4-1-概述" class="headerlink" title="4.1 概述"></a>4.1 概述</h3><p>所谓数组，就是一个集合，里面存放了相同类型的数据元素</p>
+<p><strong>特点1：</strong>数组中的每个&#x3D;&#x3D;数据元素都是相同的数据类型&#x3D;&#x3D;</p>
+<p><strong>特点2：</strong>数组是有&#x3D;&#x3D;连续的内存&#x3D;&#x3D;位置组成的</p>
+<h3 id="4-2-一维数组"><a href="#4-2-一维数组" class="headerlink" title="4.2 一维数组"></a>4.2 一维数组</h3><h4 id="4-2-1-一维数组定义方式"><a href="#4-2-1-一维数组定义方式" class="headerlink" title="4.2.1 一维数组定义方式"></a>4.2.1 一维数组定义方式</h4><p>一维数组定义的三种方式：</p>
+<ol>
+<li><p><code>数据类型 数组名[ 数组长度 ];</code></p>
+</li>
+<li><p><code>数据类型 数组名[ 数组长度 ] = &#123;值1,值2...&#125;;</code></p>
+</li>
+<li><p><code>数据类型 数组名[ ] = &#123;值1,值2 ...&#125;;</code></p>
+</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//int arr[5];</span></span><br><span class="line">	<span class="comment">//arr[0] = 10;</span></span><br><span class="line">	<span class="comment">//arr[1] = 20;</span></span><br><span class="line">	<span class="comment">//arr[2] = 30;</span></span><br><span class="line">	<span class="comment">//arr[3] = 40;</span></span><br><span class="line">	<span class="comment">//arr[4] = 50;</span></span><br><span class="line">	<span class="type">int</span> arr[<span class="number">5</span>] = &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">		cout &lt;&lt; arr[i] &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*cout &lt;&lt; arr[0] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[1] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[2] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[3] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[4] &lt;&lt; endl;*/</span></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-2-一维数组数组名"><a href="#4-2-2-一维数组数组名" class="headerlink" title="4.2.2 一维数组数组名"></a>4.2.2 一维数组数组名</h4><p>一维数组名称的<strong>用途：</strong></p>
+<ol>
+<li>可以统计整个数组在内存中的长度</li>
+<li>可以获取数组在内存中的首地址</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 1.可以通过数组名统计整个数组占用内存的大小</span></span><br><span class="line">	<span class="type">int</span> arr[<span class="number">10</span>] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span> &#125;;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;整个数组占用内存空间为：&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;每个元素占用内存空间为：&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt;endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;数组中元素个数为：&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr) / <span class="built_in">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2. 可以通过数组名查看数组首地址</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;数组首地址为：&quot;</span> &lt;&lt; (<span class="type">int</span>)arr &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;数组中第一个元素地址为：&quot;</span> &lt;&lt; (<span class="type">int</span>)&amp;arr[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;数组中第二个元素地址为：&quot;</span> &lt;&lt; (<span class="type">int</span>)&amp;arr[<span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 数组名是常量，因此不能赋值</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-3-冒泡排序"><a href="#4-2-3-冒泡排序" class="headerlink" title="4.2.3 冒泡排序"></a>4.2.3 冒泡排序</h4><p><strong>作用：</strong>最常见的排序算法，对数组内元素进行排序</p>
+<ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对乡林业元素做同样的工作，执行完毕后，找到第一个最大值。</li>
+<li>重复以上的步骤，每次比较次数-1，直到不需要比较</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 利用冒泡排序实现升序序列</span></span><br><span class="line">	<span class="type">int</span> arr[<span class="number">9</span>] = &#123; <span class="number">4</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">9</span> &#125;;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;排序前：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 总共排序轮数为 元素个数 - 1</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span> - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 内存循环对比 次数 = 元素个数 - 当前轮数 - 1</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span> - i - <span class="number">1</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[j]&gt;arr[j + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="type">int</span> temp = arr[j];</span><br><span class="line">				arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">				arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;排序后的：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; arr[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-二维数组"><a href="#4-3-二维数组" class="headerlink" title="4.3 二维数组"></a>4.3 二维数组</h3><h4 id="4-3-1-二维数组的定义方式"><a href="#4-3-1-二维数组的定义方式" class="headerlink" title="4.3.1 二维数组的定义方式"></a>4.3.1 二维数组的定义方式</h4><p>二维数组定义的四种方式：</p>
+<ol>
+<li><code>数据类型 数组名[ 行数 ][ 列数 ];</code></li>
+<li><code>数据类型 数组名[ 行数 ][ 列数 ] = &#123; &#123;数据1,数据2&#125;,&#123; 数据3, 数据4 &#125; &#125;;</code></li>
+<li><code>数据类型 数组名[ 行数 ][ 列数 ] = &#123; 数据1,数据2,数据3,数据4 &#125;;</code></li>
+<li><code>数据类型 数组名[ ][ 列数 ] = &#123; 数据1,数据2,数据3,数据4 &#125;;</code></li>
+</ol>
+<h6 id="建议：以上4种定义方式，利用-x3D-x3D-第二种更加直观，提高代码的可读性-x3D-x3D"><a href="#建议：以上4种定义方式，利用-x3D-x3D-第二种更加直观，提高代码的可读性-x3D-x3D" class="headerlink" title="建议：以上4种定义方式，利用&#x3D;&#x3D;第二种更加直观，提高代码的可读性&#x3D;&#x3D;"></a>建议：以上4种定义方式，利用&#x3D;&#x3D;第二种更加直观，提高代码的可读性&#x3D;&#x3D;</h6><p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 二维数组的定义方式</span></span><br><span class="line">	    <span class="comment">/*1. 数据类型 数组名[行数][列数]; </span></span><br><span class="line"><span class="comment">		2. 数据类型 数组名[行数][列数] = &#123; &#123; 数据1, 数据2 &#125;, &#123; 数据3, 数据4 &#125; &#125;; </span></span><br><span class="line"><span class="comment">		3. 数据类型 数组名[行数][列数] = &#123; 数据1, 数据2, 数据3, 数据4 &#125;; </span></span><br><span class="line"><span class="comment">		4. 数据类型 数组名[][列数] = &#123; 数据1, 数据2, 数据3, 数据4 &#125;; */</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1. 数据类型 数组名[行数][列数]; </span></span><br><span class="line">	<span class="type">int</span> arr[<span class="number">2</span>][<span class="number">3</span>];</span><br><span class="line">	arr[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	arr[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">	arr[<span class="number">0</span>][<span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">	arr[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">4</span>;</span><br><span class="line">	arr[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">5</span>;</span><br><span class="line">	arr[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">6</span>;</span><br><span class="line">	<span class="comment">/*cout &lt;&lt; arr[0][0] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[0][1] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[0][2] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[1][0] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[1][1] &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">	cout &lt;&lt; arr[1][2] &lt;&lt; endl;*/</span></span><br><span class="line">	<span class="comment">// 外层循环打印行数，内层循环打印列数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; arr[i][j] &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2.数据类型 数组名[行数][列数] = &#123; &#123; 数据1, 数据2 &#125;, &#123; 数据3, 数据4 &#125; &#125;;</span></span><br><span class="line">	<span class="type">int</span> arr2[<span class="number">2</span>][<span class="number">3</span>] =</span><br><span class="line">	&#123;</span><br><span class="line">		&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,</span><br><span class="line">		&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; arr2[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 3. 数据类型 数组名[行数][列数] = &#123; 数据1, 数据2, 数据3, 数据4 &#125;;</span></span><br><span class="line">	<span class="type">int</span> arr3[<span class="number">2</span>][<span class="number">3</span>] = &#123; <span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span>, <span class="number">41</span>, <span class="number">51</span>, <span class="number">61</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; arr3[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 4.数据类型 数组名[][列数] = &#123; 数据1, 数据2, 数据3, 数据4 &#125;;</span></span><br><span class="line">	<span class="type">int</span> arr4[][<span class="number">3</span>] = &#123;<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">60</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; arr4[i][j] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-3-2-二维数组数组名"><a href="#4-3-2-二维数组数组名" class="headerlink" title="4.3.2 二维数组数组名"></a>4.3.2 二维数组数组名</h4><ul>
+<li>查看二维数组所占内存空间</li>
+<li>获取二维数组首地址</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 二维数组命名的用途</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1.可以查看占用内存空间大小</span></span><br><span class="line">	<span class="type">int</span> arr[<span class="number">2</span>][<span class="number">3</span>]=</span><br><span class="line">	&#123;</span><br><span class="line">		&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,</span><br><span class="line">		&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组占用内存空间 &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组第一行占用的内存空间 &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组第一个元素占用的内存空间 &quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr[<span class="number">0</span>][<span class="number">0</span>]) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组的行数&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr) / <span class="built_in">sizeof</span>(arr[<span class="number">0</span>]) &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组的列数&quot;</span> &lt;&lt; <span class="built_in">sizeof</span>(arr[<span class="number">0</span>]) / <span class="built_in">sizeof</span>(arr[<span class="number">0</span>][<span class="number">0</span>]) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2.可以查看二维数组的首地址</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组首地址&quot;</span> &lt;&lt; (<span class="type">int</span>)&amp;arr &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组第一行首地址&quot;</span> &lt;&lt; (<span class="type">int</span>)arr[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组第二行首地址&quot;</span> &lt;&lt; (<span class="type">int</span>)arr[<span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;二维数组第一个元素的首地址&quot;</span> &lt;&lt; (<span class="type">int</span>)&amp;arr[<span class="number">0</span>][<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-函数"><a href="#5-函数" class="headerlink" title="5 函数"></a>5 函数</h2><h2 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h2><p><strong>作用：</strong>将一段经常使用的代码封装起来，减少重复代码</p>
+<p>一个较大的程序，一般分为若干个程序块，每个模块实现特定的功能。</p>
+<h4 id="5-1-1-函数的定义"><a href="#5-1-1-函数的定义" class="headerlink" title="5.1.1 函数的定义"></a>5.1.1 函数的定义</h4><p>函数的定义一半主要有5个步骤：</p>
+<ol>
+<li>返回值类型</li>
+<li>函数名</li>
+<li>参数列表</li>
+<li>函数体语句</li>
+<li>return 表达式</li>
+</ol>
+<p><strong>语法：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">返回值类型 函数名 (参数列表)</span><br><span class="line">&#123;</span><br><span class="line"> 	函数体语句</span><br><span class="line"> 	</span><br><span class="line"> 	<span class="keyword">return</span> 表达式</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">int</span> num1,<span class="type">int</span> num2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> sum = num1 + num2;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		</span><br><span class="line">	<span class="type">int</span> sum = <span class="built_in">add</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">	cout &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-1-2-值传递"><a href="#5-1-2-值传递" class="headerlink" title="5.1.2 值传递"></a>5.1.2 值传递</h4><ul>
+<li>所谓值传递，就是函数调用时实参将数值传入给形参</li>
+<li>值传递时，&#x3D;&#x3D;如果形参发生改变，并不会影响实参&#x3D;&#x3D;</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">// 值传递</span></span><br><span class="line"><span class="comment">// 定义函数，实现两个数字进行交换函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果函数不需要返回值，声明的时候可以写void</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(<span class="type">int</span> num1, <span class="type">int</span> num2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;交换前的数字&quot;</span> &lt;&lt; num1&lt;&lt;<span class="string">&quot;   &quot;</span> &lt;&lt; num2 &lt;&lt; endl;</span><br><span class="line">	<span class="type">int</span> temp = <span class="number">0</span>;</span><br><span class="line">	temp = num1;</span><br><span class="line">	num1 = num2;</span><br><span class="line">	num2 = temp;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;交换后的数字&quot;</span> &lt;&lt; num1 &lt;&lt; <span class="string">&quot;   &quot;</span> &lt;&lt; num2 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 当我们做值传递的时候，函数的形参发生改变，并不会影响实参</span></span><br><span class="line">	<span class="built_in">swap</span>(a, b);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-1-3-函数的常见样式"><a href="#5-1-3-函数的常见样式" class="headerlink" title="5.1.3 函数的常见样式"></a>5.1.3 函数的常见样式</h4><p>常见的函数样式有4种</p>
+<ol>
+<li>无参无返</li>
+<li>有参无返</li>
+<li>无参有返</li>
+<li>有参有返</li>
+</ol>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数常见样式</span></span><br><span class="line"><span class="comment">// 1、无参无返</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test01</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;test01&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2、有参无返</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">test02</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;test02&quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 3、无参有反</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">test03</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;test03&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、有参有返</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">test04</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;test04&quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// 无参无反调用</span></span><br><span class="line">	<span class="built_in">test01</span>();</span><br><span class="line">	<span class="comment">// 有参无返调用</span></span><br><span class="line">	<span class="built_in">test02</span>(<span class="number">100</span>);</span><br><span class="line">	<span class="comment">// 无参有返调用</span></span><br><span class="line">	<span class="type">int</span> num1=  <span class="built_in">test03</span>();</span><br><span class="line">	cout &lt;&lt; num1 &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 有参有返调用</span></span><br><span class="line">	<span class="type">int</span> num2 = <span class="built_in">test04</span>(<span class="number">3000</span>);</span><br><span class="line">	cout &lt;&lt; num2 &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-1-3-函数的分文件编写"><a href="#5-1-3-函数的分文件编写" class="headerlink" title="5.1.3 函数的分文件编写"></a>5.1.3 函数的分文件编写</h4><p><strong>作用：</strong>让代码结构更加清晰</p>
+<p>函数份文件编写一般有4个步骤</p>
+<ol>
+<li>创建后缀名为.h的头文件</li>
+<li>创建后缀名为.cpp的源文件</li>
+<li>在头文件中写函数的声明</li>
+<li>在源文件中写函数的定义</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;swap.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line">	<span class="built_in">swap</span>(a, b);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-指针"><a href="#6-指针" class="headerlink" title="6.指针"></a>6.指针</h2><h3 id="6-1-指针的基本概念"><a href="#6-1-指针的基本概念" class="headerlink" title="6.1 指针的基本概念"></a>6.1 指针的基本概念</h3><p><strong>指针的作用：</strong>可以通过指针间接访问内存</p>
+<ul>
+<li>内存编号是从0开始记录的，一般用十六进制数字表示</li>
+<li>可以利用指针变量保存地址</li>
+</ul>
+<h3 id="6-2-指针变量的定义和使用"><a href="#6-2-指针变量的定义和使用" class="headerlink" title="6.2 指针变量的定义和使用"></a>6.2 指针变量的定义和使用</h3><p>指针定义变量语法：<code>数据类型 * 变量名;</code></p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// 1、指针定义</span></span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="comment">// 指针定义的语法：数据类型 * 指针变量名；</span></span><br><span class="line">	<span class="type">int</span> * p;</span><br><span class="line">	<span class="comment">// 让指针记录变量a的地址</span></span><br><span class="line">	p = &amp;a;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;a的的地址为：&quot;</span> &lt;&lt; &amp;a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;指针p为：&quot;</span> &lt;&lt; p &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2、使用指针</span></span><br><span class="line">	<span class="comment">// 可以通过解引用的方式来找到指针指向的内存</span></span><br><span class="line">	<span class="comment">// 指针前加 * 代表解引用，找到指针指向的内存中的数据</span></span><br><span class="line">	*p = <span class="number">1000</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;a = &quot;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;*p = &quot;</span> &lt;&lt; *p &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-3-空指针和野指针"><a href="#6-3-空指针和野指针" class="headerlink" title="6.3 空指针和野指针"></a>6.3 空指针和野指针</h3><p><strong>空指针：</strong>指针变量指向内存中编号为0的空间</p>
+<p><strong>用途：</strong>初始化指针变量</p>
+<p><strong>注意：</strong>空指针指向的内存是不可以访问的</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// 空指针</span></span><br><span class="line">	<span class="comment">// 1、空指针用于给指针变量进行初始化</span></span><br><span class="line">	<span class="type">int</span> *p = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="comment">// 2、空指针是不可以进行访问的</span></span><br><span class="line">	*p = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>野指针：</strong>指针变量指向非法的内存空间</p>
+<p><strong>示例2</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 野指针</span></span><br><span class="line">	<span class="type">int</span> *p = (<span class="type">int</span> *)<span class="number">0x1100</span>;</span><br><span class="line">	cout &lt;&lt; *p &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-4-const修饰指针"><a href="#6-4-const修饰指针" class="headerlink" title="6.4 const修饰指针"></a>6.4 const修饰指针</h3><p>const修饰指针有三种情况：</p>
+<ol>
+<li><p>const修饰指针 – 常量指针</p>
+<p><code>const int *p = &amp;a;</code></p>
+<p>常量指针</p>
+<p>特点：指针的指向可以修改，但是指针指向不可以改</p>
+<p><code>*p = 20;  错误，指针指向的值不可以改</code> </p>
+<p><code>p = ab; 正确，指针指向可以改</code></p>
+</li>
+<li><p>const修饰常量 –指针常量</p>
+<p><code>int * const p = &amp;a;</code></p>
+<p>特点：指针的指向不可以改，指针指向的值可以改</p>
+<p><code>*p = 20; 正确，指向的值可以改</code></p>
+<p><code>p = &amp;b;  错误，指向不可以改</code> </p>
+</li>
+<li><p>const即修饰指针，又修饰常量</p>
+<p><code>const int * const p = &amp;a;</code></p>
+<p>特点：指针的指向和指针指向的值都不可以改</p>
+<p><code>*p = 20; 错误</code> </p>
+<p><code>p = &amp;b; 错误</code></p>
+</li>
+</ol>
+<h6 id="技巧：-看const右侧紧跟着的是指针还是常量，是指针就是常量指针，是常量就是指针常量"><a href="#技巧：-看const右侧紧跟着的是指针还是常量，是指针就是常量指针，是常量就是指针常量" class="headerlink" title="技巧： 看const右侧紧跟着的是指针还是常量，是指针就是常量指针，是常量就是指针常量"></a>技巧： 看const右侧紧跟着的是指针还是常量，是指针就是常量指针，是常量就是指针常量</h6><h3 id="6-5-指针和数组"><a href="#6-5-指针和数组" class="headerlink" title="6.5 指针和数组"></a>6.5 指针和数组</h3><p><strong>作用：</strong>利用指针访问数组中元素</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main34</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 指针和数组</span></span><br><span class="line">	<span class="comment">// 利用指针访问数组中的元素</span></span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> arr[<span class="number">10</span>] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span> &#125;;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;第一个元素为: &quot;</span> &lt;&lt; arr[<span class="number">0</span>] &lt;&lt; endl;</span><br><span class="line">	<span class="type">int</span> *p = arr; <span class="comment">// arr就是数组的首地址</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;利用指针访问第一个元素：&quot;</span> &lt;&lt; *p &lt;&lt; endl;</span><br><span class="line">	p++;<span class="comment">//让指针向后偏移4个字节</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;利用指针访问第二个元素:&quot;</span> &lt;&lt; *p &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;利用指针遍历数组&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="type">int</span> *p2 = arr;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; *p2 &lt;&lt; endl;</span><br><span class="line">		p2++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-结构体"><a href="#7-结构体" class="headerlink" title="7. 结构体"></a>7. 结构体</h2><h3 id="7-1-结构体基本概念"><a href="#7-1-结构体基本概念" class="headerlink" title="7.1 结构体基本概念"></a>7.1 结构体基本概念</h3><p>结构体属于用户&#x3D;&#x3D;自定义的数据类型&#x3D;&#x3D;，允许用户存储不同的数据类型</p>
+<h3 id="7-2-结构体定义和使用"><a href="#7-2-结构体定义和使用" class="headerlink" title="7.2 结构体定义和使用"></a>7.2 结构体定义和使用</h3><p>语法：<code>struct 结构体名 &#123; 结构体成员列表 &#125;;</code></p>
+<p>通过结构体创建变量的方式有三种：</p>
+<ul>
+<li>struct 结构体名 变量名</li>
+<li>struct 结构体 变量名</li>
+<li>定义结构体时顺便创建变量</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结构体定义</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// 成员列表</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 姓名</span></span><br><span class="line">	string name;</span><br><span class="line">	<span class="comment">// 年龄</span></span><br><span class="line">	<span class="type">int</span> age; </span><br><span class="line">	<span class="comment">// 分数</span></span><br><span class="line">	<span class="type">int</span> score;</span><br><span class="line">&#125;s3;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 创建具体结构体</span></span><br><span class="line">	<span class="comment">// struct 关键字可以省略</span></span><br><span class="line">	<span class="comment">// 1.struct Student s1</span></span><br><span class="line">	 Student s1;</span><br><span class="line">	s1.name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">	s1.age = <span class="number">18</span>;</span><br><span class="line">	s1.score = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;姓名 : &quot;</span> &lt;&lt; s1.name &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;年龄 : &quot;</span> &lt;&lt; s1.age &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;分数 : &quot;</span> &lt;&lt; s1.score &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;                         &quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 2.在struct Student s2 = &#123;...&#125;</span></span><br><span class="line">	 Student s2 = &#123;<span class="string">&quot;李四&quot;</span>,<span class="number">20</span>,<span class="number">90</span>&#125;;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;姓名 : &quot;</span> &lt;&lt; s2.name &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;年龄 : &quot;</span> &lt;&lt; s2.age &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;分数 : &quot;</span> &lt;&lt; s2.score &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;                         &quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// 3.在定义结构体时顺便创建结构体变量</span></span><br><span class="line">	s3.name = <span class="string">&quot;王五&quot;</span>;</span><br><span class="line">	s3.age = <span class="number">19</span>;</span><br><span class="line">	s3.score = <span class="number">80</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;姓名 : &quot;</span> &lt;&lt; s3.name &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;年龄 : &quot;</span> &lt;&lt; s3.age &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;分数 : &quot;</span> &lt;&lt; s3.score &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="总结1：定义结构体时的关键字是struct，不可省略"><a href="#总结1：定义结构体时的关键字是struct，不可省略" class="headerlink" title="总结1：定义结构体时的关键字是struct，不可省略"></a>总结1：定义结构体时的关键字是struct，不可省略</h6><h6 id="总结2：创建结构体变量时，关键字struct可以省略"><a href="#总结2：创建结构体变量时，关键字struct可以省略" class="headerlink" title="总结2：创建结构体变量时，关键字struct可以省略"></a>总结2：创建结构体变量时，关键字struct可以省略</h6><h6 id="总结3：结构体变量利用操作符-“-“访问成员"><a href="#总结3：结构体变量利用操作符-“-“访问成员" class="headerlink" title="总结3：结构体变量利用操作符 “ . “访问成员"></a>总结3：结构体变量利用操作符 “ . “访问成员</h6><h3 id="7-3-结构体数组"><a href="#7-3-结构体数组" class="headerlink" title="7.3 结构体数组"></a>7.3 结构体数组</h3><p><strong>作用：</strong>将自定义的结构体放入到数组中方便维护</p>
+<p><strong>语法：</strong><code>struct 结构体名 数组名[元素个数] = &#123; &#123;&#125;,&#123;&#125;,...,&#123;&#125; &#125;</code></p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结构体数组</span></span><br><span class="line"><span class="comment">// 1.定义结构体</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// 成员列表</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 姓名</span></span><br><span class="line">	string name;</span><br><span class="line">	<span class="comment">// 年龄</span></span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	<span class="comment">// 分数</span></span><br><span class="line">	<span class="type">int</span> score;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 2.创建结构体数组</span></span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">Student</span> stuArr[<span class="number">3</span>]=</span><br><span class="line">	&#123;</span><br><span class="line">		&#123; <span class="string">&quot;张三&quot;</span>, <span class="number">20</span>, <span class="number">99</span> &#125;,</span><br><span class="line">		&#123; <span class="string">&quot;李四&quot;</span>, <span class="number">30</span>, <span class="number">100</span> &#125;,</span><br><span class="line">		&#123; <span class="string">&quot;王五&quot;</span>, <span class="number">40</span>, <span class="number">101</span> &#125;,</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="comment">// 3.给结构体数组中的元素赋值</span></span><br><span class="line">	stuArr[<span class="number">2</span>].name = <span class="string">&quot;赵六&quot;</span>;</span><br><span class="line">	stuArr[<span class="number">2</span>].score = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 4.遍历结构体数组</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; stuArr[i].name &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; stuArr[i].age &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; stuArr[i].score &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt;<span class="string">&quot;                &quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-4-结构体指针"><a href="#7-4-结构体指针" class="headerlink" title="7.4 结构体指针"></a>7.4 结构体指针</h3><p><strong>作用：</strong>通过指针访问结构体中的成员</p>
+<p>利用操作符<code>-&gt;</code>可以通过结构体指针访问结构体属性</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// 成员列表</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 姓名</span></span><br><span class="line">	string name;</span><br><span class="line">	<span class="comment">// 年龄</span></span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	<span class="comment">// 分数</span></span><br><span class="line">	<span class="type">int</span> score;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 1.创建学生结构体变量</span></span><br><span class="line">	Student s = &#123; <span class="string">&quot;张三&quot;</span>, <span class="number">18</span>, <span class="number">100</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2.通过指针指向结构体变量</span></span><br><span class="line">	Student *p = &amp;s;</span><br><span class="line">	<span class="comment">// 3.通过指针访问结构体变量中的值</span></span><br><span class="line">	cout &lt;&lt; p-&gt;name &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; p-&gt;age &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; p-&gt;score &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-5-结构体嵌套结构体"><a href="#7-5-结构体嵌套结构体" class="headerlink" title="7.5 结构体嵌套结构体"></a>7.5 结构体嵌套结构体</h3><p><strong>作用：</strong>结构体中的成员可以是另一个结构体</p>
+<p><strong>例如：</strong>每个老师辅导一个学员，一个老师的结构体中，记录一个学生的结构体</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">stu</span></span><br><span class="line">&#123;</span><br><span class="line">	string name;</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	<span class="type">int</span> score;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">teacher</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	string name;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">stu</span> s;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	teacher t;</span><br><span class="line">	t.name = <span class="string">&quot;王&quot;</span>;</span><br><span class="line">	t.age = <span class="number">33</span>;</span><br><span class="line">	t.s.name = <span class="string">&quot;布鲁斯&quot;</span>;</span><br><span class="line">	t.s.age = <span class="number">14</span>;</span><br><span class="line">	t.s.score = <span class="number">0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;老师的姓名 &quot;</span> &lt;&lt; t.name &lt;&lt; <span class="string">&quot;老师的年龄 &quot;</span> &lt;&lt; t.age &lt;&lt; <span class="string">&quot;老师的学生姓名 &quot;</span> &lt;&lt; t.s.name &lt;&lt; <span class="string">&quot;老师的学生年龄 &quot;</span> &lt;&lt; t.s.age &lt;&lt; <span class="string">&quot;老师的学生分数 &quot;</span> &lt;&lt; t.s.score &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="总结：在结构体中可以定义李宁一个结构体作为成员，用来解决实际问题"><a href="#总结：在结构体中可以定义李宁一个结构体作为成员，用来解决实际问题" class="headerlink" title="总结：在结构体中可以定义李宁一个结构体作为成员，用来解决实际问题"></a>总结：在结构体中可以定义李宁一个结构体作为成员，用来解决实际问题</h6><h3 id="7-6-结构体做函数参数"><a href="#7-6-结构体做函数参数" class="headerlink" title="7.6 结构体做函数参数"></a>7.6 结构体做函数参数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">student</span></span><br><span class="line">&#123;</span><br><span class="line">	string name;</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	<span class="type">int</span> score;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">prinntStudent</span><span class="params">(<span class="keyword">struct</span> student s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;姓名:&quot;</span> &lt;&lt; s.name &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;年龄:&quot;</span> &lt;&lt; s.age &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;分数:&quot;</span> &lt;&lt; s.score &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">prinntStudent1</span><span class="params">(<span class="keyword">struct</span> student *s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;姓名:&quot;</span> &lt;&lt; s-&gt;name &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;年龄:&quot;</span> &lt;&lt; s-&gt;age &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;分数:&quot;</span> &lt;&lt; s-&gt;score &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	student s;</span><br><span class="line">	s.name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">	s.age = <span class="number">14</span>;</span><br><span class="line">	s.score = <span class="number">90</span>;</span><br><span class="line">	<span class="built_in">prinntStudent</span>(s);</span><br><span class="line">	<span class="built_in">prinntStudent1</span>(&amp;s);</span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Bobo</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zhongyucc.github.io/2023/03/02/C++_base/">http://zhongyucc.github.io/2023/03/02/C++_base/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Bobo</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
+                                </a>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/03/02/CPP-demo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="C++_案例">
+                        
+                        <span class="card-title">C++_案例</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/demo/">
+                        <span class="chip bg-color">demo</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/01/JavaScript-animation-Function/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="JavaScript_animation_Function">
+                        
+                        <span class="card-title">JavaScript_animation_Function</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
+                    </a>
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/about" target="_blank">Bobo</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">27.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhongyucc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:997010078@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=997010078" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 997010078" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
