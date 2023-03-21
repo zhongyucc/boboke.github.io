@@ -4,17 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript_scroll, boboke">
-    <meta name="description" content="scroll系列&amp;#x3D;&amp;#x3D;scroll&amp;#x3D;&amp;#x3D;翻译过来就是滚动的，我们使用scroll系列的相关属性可以动态的得到该元素的大小、滚动距离等。
-
-
-
-scroll系列属性
-作用
-
-
-
-element.scroll">
+    <meta name="keywords" content="JavaScript_Constructor_Dialog, boboke">
+    <meta name="description" content="用构造函数写弹窗介绍：因为自己不想在html页面中写结构，这个弹窗就全部用js+jq+css完成了
+主体部分：1234567891011function MyNewDialog(config) &amp;#123;	this.config = Ob">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +18,7 @@ element.scroll">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript_scroll | boboke</title>
+    <title>JavaScript_Constructor_Dialog | boboke</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -299,12 +291,12 @@ element.scroll">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript_scroll</h1>
+                    <h1 class="description center-align post-title">JavaScript_Constructor_Dialog</h1>
                 </div>
             </div>
         </div>
@@ -328,12 +320,12 @@ element.scroll">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
-                            </a>
-                        
                             <a href="/tags/JavaScript/">
                                 <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/demo/">
+                                <span class="chip bg-color">demo</span>
                             </a>
                         
                     </div>
@@ -357,7 +349,7 @@ element.scroll">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-08
+                    2023-03-21
                 </div>
                 
 
@@ -366,7 +358,7 @@ element.scroll">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    332
+                    977
                 </div>
                 
 
@@ -388,42 +380,30 @@ element.scroll">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="scroll系列"><a href="#scroll系列" class="headerlink" title="scroll系列"></a>scroll系列</h1><p>&#x3D;&#x3D;scroll&#x3D;&#x3D;翻译过来就是滚动的，我们使用scroll系列的相关属性可以动态的得到该元素的大小、滚动距离等。</p>
-<table>
-<thead>
-<tr>
-<th>scroll系列属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>element.scrollTop</td>
-<td>返回被卷去的上侧距离，返回数值不带单位</td>
-</tr>
-<tr>
-<td>element.scrollLeft</td>
-<td>返回被卷去的左侧距离，返回数值不带单位</td>
-</tr>
-<tr>
-<td>element.scrollWidth</td>
-<td>返回自身实际的宽度，不含边框，返回数值不带单位</td>
-</tr>
-<tr>
-<td>element.scrollHeight</td>
-<td>返回自身实际的高度，不含边框，返回数值不带单位</td>
-</tr>
-</tbody></table>
-<p>如果浏览器的高（或宽）度不足以显示整个页面时，会自动出现滚动条，当滚动条向下滚动时，页面上面被隐藏掉的高度，我们就称之为页面被卷去的头部，滚动条在滚动时会触发 onscroll 事件。</p>
-<h2 id="页面被卷去的头部兼容性解决方案"><a href="#页面被卷去的头部兼容性解决方案" class="headerlink" title="页面被卷去的头部兼容性解决方案"></a>页面被卷去的头部兼容性解决方案</h2><p>需要注意的是，页面被卷去的头部，有兼容性问题，因此被卷去的头部通常有如下几种写法：</p>
+                <h1 id="用构造函数写弹窗"><a href="#用构造函数写弹窗" class="headerlink" title="用构造函数写弹窗"></a>用构造函数写弹窗</h1><p>介绍：因为自己不想在html页面中写结构，这个弹窗就全部用js+jq+css完成了</p>
+<h3 id="主体部分："><a href="#主体部分：" class="headerlink" title="主体部分："></a><strong>主体部分：</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">MyNewDialog</span>(<span class="params">config</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">config</span> = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;</span><br><span class="line">		<span class="attr">title</span>: <span class="string">&#x27;请确认身份信息是否正确&#x27;</span>,</span><br><span class="line">		<span class="attr">noText</span>: <span class="string">&#x27;否&#x27;</span>,</span><br><span class="line">		<span class="attr">yesText</span>: <span class="string">&#x27;是&#x27;</span>,</span><br><span class="line">		<span class="attr">type</span>: <span class="string">&#x27;confirm&#x27;</span>,</span><br><span class="line">		<span class="attr">text</span>: <span class="string">&#x27;您有消息提醒&#x27;</span>,</span><br><span class="line">		<span class="attr">closeOnClickModal</span>: <span class="literal">true</span>,</span><br><span class="line">	&#125;, config);</span><br><span class="line">	<span class="title class_">MyNewDialog</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="title function_">renderDialog</span>(<span class="variable language_">this</span>.<span class="property">config</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ps：<code>Object.assign()</code>的用法</p>
+<p><strong>是什么？</strong></p>
+<p><code>Object.assign()</code>方法用于将所有课枚举属性值从一个或多个原对象复制到目标对象。它将返回目标对象。</p>
+<p>简单来说，就是<code>Object.assign()</code>是对象的静态方法，可以用来赋值对象的可枚举属性到目标对象，利用这个特性可以实现对象属性的合并。是不是有点像<code>&#123;obj,...sourceObj&#125;</code></p>
+<p><strong>怎么用？</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(target,...source)</span><br><span class="line">参数：target ---&gt;目标对象</span><br><span class="line">	 source ---&gt;源对象</span><br><span class="line">	 返回值：target，及目标对象</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意事项：</strong></p>
 <ol>
-<li><p>声明了DTD，使用 document.documentElement.scrollTop</p>
-</li>
-<li><p>未声明DTD，使用 document.body.scrollTop</p>
-</li>
-<li><p>新方法 window.pageYOffset 和 window.pageXOffset， IE9开始支持</p>
-</li>
+<li><code>Object.assign()</code>方法只会拷贝原对象自身的并且可枚举的属性到目标对象，继承属性和不可枚举属性是不能拷贝的。</li>
+<li>针对深拷贝，需要使用其他办法，因为<code>Object.assign()</code>拷贝的是属性值。假如原对象的属性值是一个对象的引用，name它也指向那个引用。</li>
+<li>目标对象自身也会改变</li>
+<li>异常会打断后续拷贝任务</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getScroll</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		<span class="attr">left</span>: <span class="variable language_">window</span>.<span class="property">pageXOffset</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollLeft</span> || <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollLeft</span> || <span class="number">0</span>,</span><br><span class="line">		<span class="attr">top</span>: <span class="variable language_">window</span>.<span class="property">pageYOffset</span> || <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scrollTop</span> || <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">scrollTop</span>|| <span class="number">0</span>,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">使用的时候 <span class="title function_">getScroll</span>().<span class="property">left</span></span><br></pre></td></tr></table></figure>
+<h3 id="渲染部分"><a href="#渲染部分" class="headerlink" title="渲染部分"></a>渲染部分</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">MyNewDialog</span>.<span class="property"><span class="keyword">prototype</span></span> = &#123;</span><br><span class="line">	<span class="attr">renderDialog</span>: <span class="keyword">function</span> (<span class="params">config</span>) &#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">config</span> = config;</span><br><span class="line">		<span class="keyword">var</span> xml = $(<span class="string">&#x27;&lt;div class=&quot;dialog&quot;&gt;&#x27;</span> +</span><br><span class="line">			<span class="string">&#x27;&lt;main&gt;&#x27;</span> +</span><br><span class="line">			<span class="string">&#x27;&lt;div class=&quot;dialog_main&quot;&gt;&#x27;</span> +</span><br><span class="line">			<span class="string">&#x27;&lt;h3&gt;&lt;i&gt;&lt;/i&gt;&lt;span&gt;&#x27;</span> + <span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">title</span> + <span class="string">&#x27;&lt;/span&gt;&lt;i&gt;&lt;/i&gt;&lt;/h3&gt;&#x27;</span></span><br><span class="line">			+ <span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">text</span> +</span><br><span class="line">			<span class="string">&#x27;&lt;/div&gt;&#x27;</span> +</span><br><span class="line">			<span class="string">&#x27;&lt;/main&gt;&#x27;</span> +</span><br><span class="line">			<span class="string">&#x27;&lt;/div&gt;&#x27;</span>);</span><br><span class="line">		<span class="keyword">switch</span> (<span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">type</span>) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&#x27;alert&#x27;</span>:</span><br><span class="line">				xml.<span class="title function_">children</span>(<span class="string">&#x27;main&#x27;</span>).<span class="title function_">append</span>(<span class="string">&#x27;&lt;footer&gt;&#x27;</span> +</span><br><span class="line">					<span class="string">&#x27;&lt;div class=&quot;close yes&quot;&gt;确认&lt;/div&gt;&#x27;</span> +</span><br><span class="line">					<span class="string">&#x27;&lt;/footer&gt;&#x27;</span>);</span><br><span class="line">				$(<span class="string">&#x27;body&#x27;</span>).<span class="title function_">append</span>(xml);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">&#x27;confirm&#x27;</span>:</span><br><span class="line">				xml.<span class="title function_">children</span>(<span class="string">&#x27;main&#x27;</span>).<span class="title function_">append</span>(<span class="string">&#x27;&lt;footer&gt;&#x27;</span> +</span><br><span class="line">					<span class="string">&#x27;&lt;div class=&quot;close no&quot;&gt;&#x27;</span> + <span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">noText</span> + <span class="string">&#x27;&lt;/div&gt;&#x27;</span> +</span><br><span class="line">					<span class="string">&#x27;&lt;div class=&quot;close yes&quot;&gt;&#x27;</span> + <span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">yesText</span> + <span class="string">&#x27;&lt;/div&gt;&#x27;</span> +</span><br><span class="line">					<span class="string">&#x27;&lt;/footer&gt;&#x27;</span>);</span><br><span class="line">				$(<span class="string">&#x27;body&#x27;</span>).<span class="title function_">append</span>(xml);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="attr">default</span>:</span><br><span class="line">				$(<span class="string">&#x27;body&#x27;</span>).<span class="title function_">append</span>(xml);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="title function_">handle</span>();</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">handle</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123; <span class="comment">//事件注册</span></span><br><span class="line">		<span class="keyword">var</span> that = <span class="variable language_">this</span>;</span><br><span class="line">		$(<span class="string">&#x27;.dialog main&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">			e.<span class="title function_">stopPropagation</span>();</span><br><span class="line">		&#125;)</span><br><span class="line">		$(<span class="string">&#x27;body&#x27;</span>).<span class="title function_">addClass</span>(<span class="string">&#x27;not_slide&#x27;</span>);</span><br><span class="line">		$(<span class="string">&#x27;.close&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">			e.<span class="title function_">stopPropagation</span>()</span><br><span class="line">			$(<span class="string">&#x27;.close&#x27;</span>).<span class="title function_">unbind</span>();</span><br><span class="line">			$(<span class="string">&#x27;.dialog&#x27;</span>).<span class="title function_">unbind</span>();</span><br><span class="line">			$(<span class="string">&#x27;.dialog main&#x27;</span>).<span class="title function_">unbind</span>();</span><br><span class="line">			$(<span class="string">&#x27;.dialog&#x27;</span>).<span class="title function_">remove</span>();</span><br><span class="line">			$(<span class="string">&#x27;body&#x27;</span>).<span class="title function_">removeClass</span>(<span class="string">&#x27;not_slide&#x27;</span>);</span><br><span class="line">			<span class="keyword">var</span> classArr = $(e.<span class="property">target</span>).<span class="title function_">attr</span>(<span class="string">&#x27;class&#x27;</span>).<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">			<span class="keyword">if</span> (classArr.<span class="title function_">indexOf</span>(<span class="string">&#x27;yes&#x27;</span>) !== -<span class="number">1</span>) &#123;</span><br><span class="line">				that.<span class="property">config</span>.<span class="property">yesCallBack</span> &amp;&amp; that.<span class="property">config</span>.<span class="title function_">yesCallBack</span>();</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				that.<span class="property">config</span>.<span class="property">noCallBack</span> &amp;&amp; that.<span class="property">config</span>.<span class="title function_">noCallBack</span>();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		<span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">config</span>.<span class="property">closeOnClickModal</span>) &#123;</span><br><span class="line">			$(<span class="string">&#x27;.dialog&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">				$(<span class="string">&#x27;.close&#x27;</span>).<span class="title function_">unbind</span>();</span><br><span class="line">				$(<span class="string">&#x27;.dialog&#x27;</span>).<span class="title function_">unbind</span>();</span><br><span class="line">				$(<span class="string">&#x27;.dialog main&#x27;</span>).<span class="title function_">unbind</span>();</span><br><span class="line">				$(<span class="string">&#x27;.dialog&#x27;</span>).<span class="title function_">remove</span>();</span><br><span class="line">				$(<span class="string">&#x27;body&#x27;</span>).<span class="title function_">removeClass</span>(<span class="string">&#x27;not_slide&#x27;</span>);</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.dialog</span> &#123;</span><br><span class="line">	<span class="attribute">position</span>: fixed;</span><br><span class="line">	<span class="attribute">display</span>: flex;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">99</span>;</span><br><span class="line">	<span class="attribute">justify-content</span>: center;</span><br><span class="line">	<span class="attribute">align-items</span>: center;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.8</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.not_slide</span> &#123;</span><br><span class="line">	<span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog</span> <span class="selector-tag">main</span> &#123;</span><br><span class="line">	<span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">	<span class="attribute">padding-top</span>: <span class="number">8%</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">85vw</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">35vh</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">	<span class="attribute">border-radius</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog_main</span> &#123;</span><br><span class="line">	<span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog_main</span> <span class="selector-tag">h3</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: flex;</span><br><span class="line">	<span class="attribute">justify-content</span>: center;</span><br><span class="line">	<span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">18px</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#766feb</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog_main</span> <span class="selector-tag">h3</span> <span class="selector-tag">i</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">2px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#766feb</span>;</span><br><span class="line">	<span class="attribute">margin</span>: auto <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog_main</span> <span class="selector-tag">h3</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">	<span class="attribute">margin-left</span>: <span class="number">30px</span>;</span><br><span class="line">	<span class="attribute">margin-right</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog_main</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">	<span class="attribute">margin-top</span>: <span class="number">15px</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog</span> <span class="selector-tag">footer</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: flex;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">justify-content</span>: space-around;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog</span> <span class="selector-tag">footer</span> <span class="selector-class">.close</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">40%</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">	<span class="attribute">text-align</span>: center;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">	<span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#8491f3</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog</span> <span class="selector-tag">footer</span> <span class="selector-class">.yes</span> &#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#8491f3</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dialog</span> <span class="selector-tag">footer</span> <span class="selector-class">.no</span> &#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#8491f3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a><strong>如何使用？</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">MyNewDialog</span>(&#123;</span><br><span class="line">	<span class="attr">text</span>:xxxx, <span class="comment">// 你要提示的内容</span></span><br><span class="line">	<span class="attr">noText</span>:xxx, <span class="comment">// 取消按钮的文案</span></span><br><span class="line">	<span class="attr">yesText</span>:xxx,<span class="comment">// 确认按钮的文案</span></span><br><span class="line">	<span class="attr">type</span>:alert/confirm, <span class="comment">// alert为警示框只有确定，confirm会有确认和取消两个按钮</span></span><br><span class="line">	<span class="title function_">yesCallBack</span>(<span class="params"></span>)&#123;</span><br><span class="line">			<span class="comment">// 确认的回调</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="title function_">noCallBack</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="comment">// 关闭弹窗的回调</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -451,7 +431,7 @@ element.scroll">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhongyucc.github.io/2023/03/08/JavaScript-scroll/">http://zhongyucc.github.io/2023/03/08/JavaScript-scroll/</a>
+                    <a href="http://zhongyucc.github.io/2023/03/21/JavaScript-Constructor-Dialog/">http://zhongyucc.github.io/2023/03/21/JavaScript-Constructor-Dialog/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -489,12 +469,12 @@ element.scroll">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
-                                </a>
-                            
                                 <a href="/tags/JavaScript/">
                                     <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
+                                <a href="/tags/demo/">
+                                    <span class="chip bg-color">demo</span>
                                 </a>
                             
                         </div>
@@ -573,70 +553,18 @@ element.scroll">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/09/JavaScript-DOM/">
+                <a href="/2023/03/21/JavaScript-Constructor-Dialog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="JavaScript_DOM">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="JavaScript_Constructor_Dialog">
                         
-                        <span class="card-title">JavaScript_DOM</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-09
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
-                    </a>
-                    
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/03/07/JavaScript-offset/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript_offset">
-                        
-                        <span class="card-title">JavaScript_offset</span>
+                        <span class="card-title">JavaScript_Constructor_Dialog</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -647,7 +575,7 @@ element.scroll">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-21
                             </span>
                         <span class="publish-author">
                             
@@ -661,15 +589,69 @@ element.scroll">
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
-                    </a>
-                    
                     <a href="/tags/JavaScript/">
                         <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/demo/">
+                        <span class="chip bg-color">demo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/16/CPP-EleManager-system/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="CPP_职工管理系统">
+                        
+                        <span class="card-title">CPP_职工管理系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/demo/">
+                        <span class="chip bg-color">demo</span>
+                    </a>
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
                 </div>
