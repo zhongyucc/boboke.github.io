@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS日期对象Date(), boboke">
-    <meta name="description" content="Date()日期对象Date() 日期对象  是一个构造函数  必须使用new  来调用创建我们的日期对象
-12345678// 1.使用Date  如果没有参数 返回当前系统的当前时间	var date = new Date();	con">
+    <meta name="keywords" content="Vue3.0的优化, boboke">
+    <meta name="description" content="Vue3.0的优化1、源码优化1.1 更好的代码管理方式monorepo
+首先是源码优化，也就是对于Vue.js框架本身开发的优化，它的目的是让代码更易于开发和维护
+
+源码的优化主要体现在使用monorepo和TypeScript管理和开发">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS日期对象Date() | boboke</title>
+    <title>Vue3.0的优化 | boboke</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -291,12 +293,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS日期对象Date()</h1>
+                    <h1 class="description center-align post-title">Vue3.0的优化</h1>
                 </div>
             </div>
         </div>
@@ -320,12 +322,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
-                            </a>
-                        
                             <a href="/tags/JavaScript/">
                                 <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%BF%9B%E9%98%B6/">
+                                <span class="chip bg-color">进阶</span>
+                            </a>
+                        
+                            <a href="/tags/Vue3/">
+                                <span class="chip bg-color">Vue3</span>
                             </a>
                         
                     </div>
@@ -336,8 +342,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JavaScript/" class="post-category">
-                                JavaScript
+                            <a href="/categories/Vue3/" class="post-category">
+                                Vue3
                             </a>
                         
                     </div>
@@ -349,7 +355,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-28
+                    2023-03-23
                 </div>
                 
 
@@ -358,7 +364,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    2.1k
                 </div>
                 
 
@@ -380,71 +386,88 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Date-日期对象"><a href="#Date-日期对象" class="headerlink" title="Date()日期对象"></a>Date()日期对象</h1><p>Date() 日期对象  是一个构造函数  必须使用new  来调用创建我们的日期对象</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.使用Date  如果没有参数 返回当前系统的当前时间</span></span><br><span class="line">	<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date);</span><br><span class="line"><span class="comment">// 2.参数常用的写法 数字型 2019, 10, 01 或者是 字符串型 &#x27;2019-10-1 08:08:08&#x27; </span></span><br><span class="line">	<span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">2019</span>, <span class="number">10</span>, <span class="number">1</span>);  </span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date1);  <span class="comment">//返回的是 11月 不是 10月</span></span><br><span class="line">	<span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="string">&#x27;2019-10-1 8:8:8&#x27;</span>);  <span class="comment">//最常用的</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date);</span><br></pre></td></tr></table></figure>
+                <h1 id="Vue3-0的优化"><a href="#Vue3-0的优化" class="headerlink" title="Vue3.0的优化"></a>Vue3.0的优化</h1><h2 id="1、源码优化"><a href="#1、源码优化" class="headerlink" title="1、源码优化"></a>1、源码优化</h2><h3 id="1-1-更好的代码管理方式monorepo"><a href="#1-1-更好的代码管理方式monorepo" class="headerlink" title="1.1 更好的代码管理方式monorepo"></a>1.1 更好的代码管理方式monorepo</h3><ul>
+<li>首先是源码优化，也就是对于Vue.js框架本身开发的优化，它的<strong>目的是</strong>让代码更易于开发和维护</li>
+</ul>
+<p><strong>源码的优化主要体现在</strong>使用<code>monorepo</code>和<code>TypeScript</code>管理和开发源码，这样做的目的是提升自身代码可维护性</p>
+<p><strong>vue2.0中的组织方式：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">    ├─compiler   // 模板编译的相关代码</span><br><span class="line">    ├─core   	// 与平台无关的通用运行时代码 </span><br><span class="line">    ├─platforms // 平台专有代码</span><br><span class="line">    ├─server       // 服务端渲染的相关代码</span><br><span class="line">    ├─sfc             // .vue单文件解析相关代码</span><br><span class="line">    └─shared       // 共享工具代码</span><br></pre></td></tr></table></figure>
+
+<p><strong>vue3.0的组织方式：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">packages</span><br><span class="line">    ├─compiler-core  </span><br><span class="line">    ├─compiler-dom   	</span><br><span class="line">    ├─compiler-sfc </span><br><span class="line">    ├─compiler-ssr     </span><br><span class="line">    ├─reactivity            </span><br><span class="line">    ├─runtime-core</span><br><span class="line">    ├─runtime-dom</span><br><span class="line">    ├─runtime-test</span><br><span class="line">    ├─server-renderer</span><br><span class="line">    ├─shared</span><br><span class="line">    ├─size-check</span><br><span class="line">    ├─template-explorer</span><br><span class="line">    └─vue     </span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>Date 对象和Math对象不一样，他是一个构造函数，所以我们需要实例化后才能使用</li>
-<li>Date 实例用来处理日期和时间</li>
+<li>相对于Vue.js 2.x的源码组织方式，<code>monorepo</code>把这些模块拆分到不同的package中</li>
+<li>每个package都有各自的<strong>API、类型定义和测试</strong></li>
 </ul>
-<h2 id="Date-方法的使用"><a href="#Date-方法的使用" class="headerlink" title="Date()方法的使用"></a>Date()方法的使用</h2><h3 id="1-获取当前时间必须实例化"><a href="#1-获取当前时间必须实例化" class="headerlink" title="1.获取当前时间必须实例化"></a>1.获取当前时间必须实例化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(now);</span><br></pre></td></tr></table></figure>
+<p>这样使得模板拆分更细化，职责划分更明确，模块之间的依赖关系也更加明确，开发人员也更容易阅读、理解和更改所有模块源码，提高代码的可维护性。</p>
+<p><code>package</code>（比如reactivity响应式库）是可以独立于Vue.js使用的，这样用户如果指向使用Vue.js 3.0的响应式能力，可以单独依赖这个响应式库而不用去依赖整个Vue.js，减小了引用包的体积大小，而Vue.js 2.x是做不到这一点的</p>
+<h3 id="1-2-使用类型语言开发（有类型的JavaScript：TypeScript）"><a href="#1-2-使用类型语言开发（有类型的JavaScript：TypeScript）" class="headerlink" title="1.2 使用类型语言开发（有类型的JavaScript：TypeScript）"></a>1.2 使用类型语言开发（有类型的JavaScript：TypeScript）</h3><p>同时对于源码的优化也体现在Vue.js 3.0使用类型语言开发（Vue.js 2.x中使用的是Flow）：</p>
+<ul>
+<li>其可以在编码期间帮你做<strong>类型检查</strong>，避免一些因类型问题导致的错误</li>
+<li><strong>有利于它去定义接口的类型</strong>，利于IDE对变量类型的推导</li>
+</ul>
+<h6 id="PS：什么是Flow？"><a href="#PS：什么是Flow？" class="headerlink" title="PS：什么是Flow？"></a>PS：什么是Flow？</h6><ul>
+<li>Flow是Facebook出品的JavaScript静态类型检索工具，它可以以非常小的成本对已有的JavaScript代码嵌入，非常灵活，这也是Vue.js 2.0当初选型它时一方面的考量</li>
+<li>但是Flow对于一些<strong>复杂场景类型的检索</strong>的支持并不好</li>
+</ul>
+<h2 id="2、性能优化"><a href="#2、性能优化" class="headerlink" title="2、性能优化"></a>2、性能优化</h2><h3 id="2-1-源码体积优化"><a href="#2-1-源码体积优化" class="headerlink" title="2.1 源码体积优化"></a>2.1 源码体积优化</h3><ul>
+<li>移除一些冷门的feature</li>
+<li>引入tree-shaking的技术</li>
+</ul>
+<h6 id="PS：tree-shaking依赖ES2015模块语法的静态结构（即import和export）通过编译阶段的静态分析，找到没有引入的模块并打上标记，例如，如果你在项目中没有引入Transition、KeepAlive等组件，name他们对应的代码就不会打包这样也就间接达到了减少项目引入Vue-js包体积中的目的"><a href="#PS：tree-shaking依赖ES2015模块语法的静态结构（即import和export）通过编译阶段的静态分析，找到没有引入的模块并打上标记，例如，如果你在项目中没有引入Transition、KeepAlive等组件，name他们对应的代码就不会打包这样也就间接达到了减少项目引入Vue-js包体积中的目的" class="headerlink" title="PS：tree-shaking依赖ES2015模块语法的静态结构（即import和export）通过编译阶段的静态分析，找到没有引入的模块并打上标记，例如，如果你在项目中没有引入Transition、KeepAlive等组件，name他们对应的代码就不会打包这样也就间接达到了减少项目引入Vue.js包体积中的目的"></a>PS：<code>tree-shaking</code>依赖ES2015模块语法的静态结构（即i<code>mport</code>和<code>export</code>）通过编译阶段的静态分析，找到没有引入的模块并打上标记，例如，如果你在项目中没有引入<code>Transition</code>、<code>KeepAlive</code>等组件，name他们对应的代码就不会打包这样也就间接达到了减少项目引入Vue.js包体积中的目的</h6><h3 id="2-2-数据劫持优化"><a href="#2-2-数据劫持优化" class="headerlink" title="2.2 数据劫持优化"></a>2.2 数据劫持优化</h3><p>Vue.js区别于React.js的一大特色，是它的数据是响应式的，这个特色从Vue.js 1.0版本就一直伴随着，dom是数据的一种映射，数据发生后可以自动更新到用户，用户只需要专注于修改数据，没有其余的负担，在Vue.js内部想要实现这个功能是要付出一定代价的，那就是必须劫持数据的访问和更新。</p>
+<p><strong>Vue.js如何知道更新那一片DOM？</strong></p>
+<p>  在渲染DOM的时候访问了数据，我们可以对它进行访问劫持，这样就在内部建立了依赖关系，也就知道数据对应的DOM是什么了</p>
+<p><strong>之前是如何更新的？</strong></p>
+<p>通过<code>Object.defineProperty</code>这个API劫持数据的<code>get</code>和<code>set</code>，具体如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(data,<span class="string">&#x27;a&#x27;</span>,&#123;</span><br><span class="line">	<span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">	 	<span class="comment">//track</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="title function_">set</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="comment">//trigger</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-Date-构造函数的参数"><a href="#2-Date-构造函数的参数" class="headerlink" title="2.Date()构造函数的参数"></a>2.Date()构造函数的参数</h3><p>如果括号里面有时间，就返回参数里面的时间，例如日期格式字符串为 ‘2019-5-1’,可以写成 new Date(‘2019-5-1’)或者 new Date(‘2019&#x2F;5&#x2F;1’)</p>
-<h2 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h2><p>我们想要 2019-9-8 8:8:8 格式的日期，该怎么办？</p>
-<p>需要获取日期指定的部分，所以我们要手动的得到这种方式。</p>
-<table>
-<thead>
-<tr>
-<th>方法名</th>
-<th>说明</th>
-<th>代码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>getFullYear()</td>
-<td>获取当年</td>
-<td>dObj.getFullYear()</td>
-</tr>
-<tr>
-<td>getMonth()</td>
-<td>获取当月(0-11)</td>
-<td>dObj.getMonth()</td>
-</tr>
-<tr>
-<td>getDate()</td>
-<td>获取当天日期</td>
-<td>dObj.getDate()</td>
-</tr>
-<tr>
-<td>getDay()</td>
-<td>获取星期几(周日0 到周六 6)</td>
-<td>dObj.getDay()</td>
-</tr>
-<tr>
-<td>getHours()</td>
-<td>获取当前小时</td>
-<td>dObj.getHours()</td>
-</tr>
-<tr>
-<td>getMinutes()</td>
-<td>获取当前分钟</td>
-<td>dObj.getMinutes()</td>
-</tr>
-<tr>
-<td>getSconds()</td>
-<td>获取当前秒钟</td>
-<td>dObj.getSconds()</td>
-</tr>
-</tbody></table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们写一个 2019年 5月 1日 星期三</span></span><br><span class="line">	<span class="keyword">var</span> year = date.<span class="title function_">getFullYear</span>();</span><br><span class="line">	<span class="keyword">var</span> month = date.<span class="title function_">getMonth</span>() + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">var</span> dates = dates.<span class="title function_">getDate</span>();</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="string">&#x27;星期日&#x27;</span>, <span class="string">&#x27;星期一&#x27;</span>, <span class="string">&#x27;星期二&#x27;</span>,<span class="string">&#x27;星期三&#x27;</span>, <span class="string">&#x27;星期四&#x27;</span>, <span class="string">&#x27;星期五&#x27;</span>, <span class="string">&#x27;星期六&#x27;</span>];</span><br><span class="line">	<span class="keyword">var</span> day = date.<span class="title function_">getDay</span>();</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;今天是：&#x27;</span> + year + <span class="string">&#x27;年&#x27;</span> + month + <span class="string">&#x27;月&#x27;</span> + dates + <span class="string">&#x27;日&#x27;</span> + arr[day]);</span><br></pre></td></tr></table></figure>
+<p>这个API有一个缺陷，它必须预先知道要拦截的key是什么，所以并不能检测对象属性的添加和删除。Vue中采用<code>$set</code>和<code>$delate</code></p>
+<p>方法去解决这个问题，另外<code>Object.defineProperty</code>的方法还有一个问题，遇到嵌套层级比较深的对象时，Vue,js无法判断你在运行时会访问哪个属性，如果定义的响应式数据十分复杂就会有很大的性能负担。</p>
+<p><strong>现在如何更新？</strong></p>
+<p>Vue.js 3.0使用了<code>Proxy API</code>自拍数据劫持的对象，其内部：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">observed = new Proxy(data,&#123;</span><br><span class="line">	get()&#123;</span><br><span class="line">		//track</span><br><span class="line">	&#125;,</span><br><span class="line">	set()&#123;</span><br><span class="line">		//trigger</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="日期格式化时分秒"><a href="#日期格式化时分秒" class="headerlink" title="日期格式化时分秒"></a>日期格式化时分秒</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装一个函数返回当前的时分秒 格式 08:08:08</span></span><br><span class="line">	<span class="keyword">function</span> <span class="title function_">getTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> times = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">        <span class="keyword">var</span> h = time.<span class="title function_">getHours</span>();</span><br><span class="line">        h = h &lt; <span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span> + h : h;</span><br><span class="line">        <span class="keyword">var</span> m = time.<span class="title function_">getMinutes</span>();</span><br><span class="line">        m = m &lt; <span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span>+ m : m;</span><br><span class="line">        <span class="keyword">var</span> s = time.<span class="title function_">getSeconds</span>();</span><br><span class="line">        s = s &lt; <span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span>+ s : s;</span><br><span class="line">        <span class="keyword">return</span> h + <span class="string">&#x27;:&#x27;</span> + m + <span class="string">&#x27;:&#x27;</span> + s;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getTime</span>());</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-编译优化"><a href="#2-2-编译优化" class="headerlink" title="2.2 编译优化"></a>2.2 编译优化</h3><p>通过在编译阶段优化编译的结果，实现运行时<code>patch过程</code>的优化</p>
+<p>Vue.js 2.x的数据劫持更新并触发重新渲染的粒度是组件级的，虽然能保证触发更新的组件最小化，但在单个组件内部依然需要遍历该组件整个vnode树。</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>static text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>static text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>static text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       	        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>static text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="获取日期的总的毫秒形式"><a href="#获取日期的总的毫秒形式" class="headerlink" title="获取日期的总的毫秒形式"></a>获取日期的总的毫秒形式</h3><p>Date 对象是基于1970年1月1日（世界标准时间）起得毫秒数</p>
-<p>我们经常利用总的毫秒数计算时间，因为它更精确</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获得Date总的毫秒数（时间戳）  不是当前时间的毫秒数 而是距离1970年1月1日过了多少毫秒数</span></span><br><span class="line"><span class="comment">// 1.通过 valueOf() getTime()</span></span><br><span class="line">	<span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date.<span class="title function_">valueOf</span>());</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(date.<span class="title function_">getTime</span>());</span><br><span class="line"><span class="comment">// 2.简单的写法（最常用的写法）</span></span><br><span class="line">	<span class="keyword">var</span> date1 = +<span class="keyword">new</span> <span class="title class_">Date</span>();  <span class="comment">// +new Date()  返回的就是总的毫秒数</span></span><br><span class="line"><span class="comment">// 3.H5 新增的 获得总的毫秒数</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Date</span>.<span class="title function_">now</span>());</span><br></pre></td></tr></table></figure>
+<p>以上组件只有第三个p中的数据是动态的</p>
+<p>整个diff过程如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Diff div</span><br><span class="line">	│</span><br><span class="line">	│</span><br><span class="line">	└─→Diff props of div</span><br><span class="line">			 │</span><br><span class="line">			 ↓</span><br><span class="line">		Diff children of div</span><br><span class="line">			│</span><br><span class="line">			│</span><br><span class="line">			└─→Diff p			Repeat n times</span><br><span class="line">				   │                ┌  ───────────── ┐</span><br><span class="line">				   │		↓				    ┃</span><br><span class="line">				   └─→ Diff props of p			  ┃</span><br><span class="line">				   			 │				     ┃</span><br><span class="line">						       ↓				 ┃</span><br><span class="line">					     Diff children of p  ──────┘</span><br><span class="line">					               |</span><br><span class="line">					               ↓</span><br><span class="line">					             End</span><br><span class="line">						</span><br></pre></td></tr></table></figure>
 
-<h2 id="倒计时案例"><a href="#倒计时案例" class="headerlink" title="倒计时案例"></a>倒计时案例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 核心算法：输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能看着时分秒相减</span></span><br><span class="line"><span class="comment">// 用时间戳来做，用户输入时间总的毫秒数减去现在时间的总的毫秒数，得到的就是剩余时间的毫秒数</span></span><br><span class="line"><span class="comment">// 把剩余时间总的毫秒数转换为天、时、分、秒（时间戳转换为时分秒）</span></span><br><span class="line"><span class="comment">// 转换公式如下：</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    d = parseInt(总秒数/60/60/24); // 计算天数</span></span><br><span class="line"><span class="comment">    h = parseInt(总秒数/60/60%24); // 计算小时</span></span><br><span class="line"><span class="comment">    m = parseInt(总秒数/60/%60);   // 计算分数</span></span><br><span class="line"><span class="comment">    s = parseInt(总秒数%60);       // 计算当前秒数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">conutDown</span>(<span class="params">time</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> nowTime = +<span class="keyword">new</span> <span class="title class_">Date</span>() <span class="comment">// 返回的是当前时间总的毫秒数</span></span><br><span class="line">    <span class="keyword">var</span> inputTime = + <span class="keyword">new</span> <span class="title class_">Date</span>(time); <span class="comment">// 返回的是用户输入时间总的毫秒数</span></span><br><span class="line">    <span class="keyword">var</span> times = (inputTime - nowTime) / <span class="number">1000</span>; <span class="comment">// time是剩余时间总的秒数</span></span><br><span class="line">    <span class="keyword">var</span> d = <span class="built_in">parseInt</span>(times / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>);  <span class="comment">// 天</span></span><br><span class="line">    d = d &lt; <span class="number">10</span> ? <span class="number">0</span> + d : d;</span><br><span class="line">    <span class="keyword">var</span> h = <span class="built_in">parseInt</span>(times / <span class="number">60</span> / <span class="number">60</span> % <span class="number">24</span>);     <span class="comment">// 时</span></span><br><span class="line">    h = h &lt; <span class="number">10</span> ? <span class="number">0</span> + h : h;</span><br><span class="line">    <span class="keyword">var</span> m = <span class="built_in">parseInt</span>(times / <span class="number">60</span> % <span class="number">60</span>);       <span class="comment">// 分</span></span><br><span class="line">    m = m &lt; <span class="number">10</span> ? <span class="number">0</span> + m : m;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">parseInt</span>(times % <span class="number">60</span>);            <span class="comment">// 当前的秒</span></span><br><span class="line">    s = s &lt; <span class="number">10</span> ? <span class="number">0</span> + s : s;</span><br><span class="line">    <span class="keyword">return</span> d + <span class="string">&#x27;天&#x27;</span> + h + <span class="string">&#x27;时&#x27;</span> + m + <span class="string">&#x27;分&#x27;</span> + s + <span class="string">&#x27;秒&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">conutDown</span>(<span class="string">&#x27;2022-10-1 8:8:8&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p>因为只有一个动态节点，所以在这里有很多的diff和遍历都是不需要的，这就导致vnode性能和模板大小正相关，更动态节点的数量无关，对于上面理想状态是<strong>只需要diff</strong>这个绑定message动态节点的p标签即可</p>
+<p>Vue.js 3.0中通过编译阶段对静态模板的分析，编译生成了<code>Block tree</code>。</p>
+<p><strong><code>Block tree</code></strong></p>
+<ul>
+<li><code>Block tree</code>是一个将模板<code>基于动态节点</code>指令切割的嵌套区块，每个区块内部节点结构是<strong>固定的</strong>每个区块只需要以一个Array来追踪自身包含的动态节点</li>
+<li>借助<code>Block tree</code>，Vue.js将vnode更新性能与模板整体大小相关提升为<strong>与动态内容的数量相关</strong>。</li>
+</ul>
+<p>Vue.js 3.0在编译阶段还包含了对Slot的编译优化、事件侦听函数的缓存优化并且在运行时重写了<code>diff算法</code></p>
+<h2 id="3、语法优化"><a href="#3、语法优化" class="headerlink" title="3、语法优化"></a>3、语法优化</h2><h3 id="3-1-优化逻辑组织"><a href="#3-1-优化逻辑组织" class="headerlink" title="3.1 优化逻辑组织"></a>3.1 优化逻辑组织</h3><p>Vue.js 3.0提供了<code>Composition API</code>，在之前版本的Vue中编写组件本质就是在编写一个“包含了描述组件选项的对象”，我们称之为<code>Options API</code></p>
+<p><strong><code>Options API</code></strong></p>
+<ul>
+<li><code>Options API</code>的设计是按照<code>methods、computed、data、props</code> 这些不同的选项分类</li>
+<li><strong>当组件小的时候</strong>，这种方式一目了然；但是在大型组件中，一个组件可能有多个逻辑关注点，当使用<code>Options API</code>的时候，每一个关注点都有自己的Options，如果需要修改一个逻辑点关注点，就需要在单个文件中不断上下切换和寻找</li>
+</ul>
+<p><strong><code>Composition API</code></strong></p>
+<ul>
+<li>将某个逻辑关注点相关的代码全放在一个函数里，这样当需要修改一个功能时，就不再需要在文件中跳来跳去</li>
+<li>除了在逻辑复用方面有优势，也会有更好的类型支持</li>
+<li>因为它们都是一些函数，<strong>在调用函数时</strong>，自然所有的类型就被推导出来了，不想<code>Options API</code>所有的东西使用<code>this</code></li>
+<li>另外，<code>Composition API</code>和<code>tree-shaking</code>友好，代码也更容易压缩</li>
+</ul>
+<h3 id="3-2-优化逻辑复用"><a href="#3-2-优化逻辑复用" class="headerlink" title="3.2 优化逻辑复用"></a>3.2 优化逻辑复用</h3><p> 在Vue.js 2.0中我们通常会用mixins复用逻辑</p>
+<p><strong>mixin的缺点</strong></p>
+<ul>
+<li>首先每个mixin都可以定义自己的props、data，它们之间是无感的所以很容易定义相同的变量，导致命名冲突</li>
+</ul>
+<h3 id="3-2-引入RFC：使每个版本改动可控"><a href="#3-2-引入RFC：使每个版本改动可控" class="headerlink" title="3.2 引入RFC：使每个版本改动可控"></a>3.2 引入RFC：使每个版本改动可控</h3><p><code>RFC</code>：Rquest For Comments,旨在为新功能进入框架提供一个一致且可控的路径</p>
+<p>大规模启用<code>RFC</code>，可以了解每一个feature采用或被废弃掉的前因后果</p>
+<h3 id="3-3-过渡期"><a href="#3-3-过渡期" class="headerlink" title="3.3 过渡期"></a>3.3 过渡期</h3><p>Vue.js 2.0中通常major版本的升级会有很多<code>breaking change</code>，这就意味着想从2.x升级到3.0的项目需要改代码，而且不仅仅项目的代码要改，所依赖的周边生态也需要升级</p>
+<p>Vue.js 3.0使用ES2015的语法开发，有些API如<code>Proxy</code>是没有<code>polyfill</code>的，这就意味着官方需要单独出一个<code>IE11 compat</code>版本来支持IE11</p>
+
                 
             </div>
             <hr/>
@@ -470,7 +493,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhongyucc.github.io/2023/02/28/Javascript%E6%97%B6%E9%97%B4%E5%AF%B9%E8%B1%A1/">http://zhongyucc.github.io/2023/02/28/Javascript%E6%97%B6%E9%97%B4%E5%AF%B9%E8%B1%A1/</a>
+                    <a href="http://zhongyucc.github.io/2023/03/23/Vue3-change/">http://zhongyucc.github.io/2023/03/23/Vue3-change/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -508,12 +531,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
-                                </a>
-                            
                                 <a href="/tags/JavaScript/">
                                     <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%BF%9B%E9%98%B6/">
+                                    <span class="chip bg-color">进阶</span>
+                                </a>
+                            
+                                <a href="/tags/Vue3/">
+                                    <span class="chip bg-color">Vue3</span>
                                 </a>
                             
                         </div>
@@ -592,17 +619,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/01/JavaScript-string-methods/">
+                <a href="/2023/03/23/Vue3-change/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="JavaScript字符串操作方法">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Vue3.0的优化">
                         
-                        <span class="card-title">JavaScript字符串操作方法</span>
+                        <span class="card-title">Vue3.0的优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -612,9 +640,67 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-01
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Vue3/" class="post-category">
+                                    Vue3
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BF%9B%E9%98%B6/">
+                        <span class="chip bg-color">进阶</span>
+                    </a>
+                    
+                    <a href="/tags/Vue3/">
+                        <span class="chip bg-color">Vue3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/21/JavaScript-Constructor-Dialog/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="JavaScript_Constructor_Dialog">
+                        
+                        <span class="card-title">JavaScript_Constructor_Dialog</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -630,51 +716,14 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
-                    </a>
-                    
                     <a href="/tags/JavaScript/">
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/02/17/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-17
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Bobo
-                            
-                        </span>
-                    </div>
+                    <a href="/tags/demo/">
+                        <span class="chip bg-color">demo</span>
+                    </a>
+                    
                 </div>
                 
             </div>
