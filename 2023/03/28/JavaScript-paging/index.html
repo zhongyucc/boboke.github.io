@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript_location, boboke">
-    <meta name="description" content="location对象什么是location对象window 对象给我们提供了一个&amp;#x3D;&amp;#x3D;location属性&amp;#x3D;&amp;#x3D;用于&amp;#x3D;&amp;#x3D;获取或设置窗体的url&amp;#x3D;&amp;#x3D;，并且可以用于&amp;#">
+    <meta name="keywords" content="JavaScript_paging, boboke">
+    <meta name="description" content="JS前端实现分页效果html代码：
+123456789101112131415161718192021222324252627&amp;lt;table id=&amp;quot;info&amp;quot; class=&amp;quot;layui-table&amp;quo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript_location | boboke</title>
+    <title>JavaScript_paging | boboke</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -290,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript_location</h1>
+                    <h1 class="description center-align post-title">JavaScript_paging</h1>
                 </div>
             </div>
         </div>
@@ -327,6 +328,10 @@
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
+                            <a href="/tags/demo/">
+                                <span class="chip bg-color">demo</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -348,7 +353,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-14
+                    2023-03-28
                 </div>
                 
 
@@ -357,7 +362,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    392
+                    816
                 </div>
                 
 
@@ -379,76 +384,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h1><h2 id="什么是location对象"><a href="#什么是location对象" class="headerlink" title="什么是location对象"></a>什么是location对象</h2><p>window 对象给我们提供了一个&#x3D;&#x3D;location属性&#x3D;&#x3D;用于&#x3D;&#x3D;获取或设置窗体的url&#x3D;&#x3D;，并且可以用于&#x3D;&#x3D;解析URL&#x3D;&#x3D;。因为这个属性返回的是一个对象，所以我们将这个属性也称为&#x3D;&#x3D;location对象&#x3D;&#x3D;。</p>
-<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>&#x3D;&#x3D;统一资源定位符(Uniform Resource Locator,URL)&#x3D;&#x3D;是互联网标准资源的地址，互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它</p>
-<p>URL的一般语法格式为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">protocol://host[:port]/path/[?query]#fragment</span><br><span class="line">http://www.itcast.cn/index.html?name=andy&amp;age=18#link</span><br></pre></td></tr></table></figure>
+                <h1 id="JS前端实现分页效果"><a href="#JS前端实现分页效果" class="headerlink" title="JS前端实现分页效果"></a>JS前端实现分页效果</h1><p>html代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">&quot;info&quot;</span> <span class="attr">class</span>=<span class="string">&quot;layui-table&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">colgroup</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">&quot;150&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">&quot;300&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">col</span> <span class="attr">width</span>=<span class="string">&quot;400&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">colgroup</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">th</span>&gt;</span>xx<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">th</span>&gt;</span>xx<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">th</span>&gt;</span>xx<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">th</span>&gt;</span>xx<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">th</span>&gt;</span>xx<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">tbody</span> <span class="attr">id</span>=<span class="string">&quot;page_main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;page_box&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;layui-btn layui-btn-sm layui-btn-primary&quot;</span> <span class="attr">id</span>=<span class="string">&quot;page_prev&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;layui-icon layui-icon-left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">     上一页</span><br><span class="line">   <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- &lt;ul class=&quot;pagination&quot;&gt;&lt;/ul&gt; --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;layui-btn layui-btn-sm layui-btn-primary&quot;</span> <span class="attr">id</span>=<span class="string">&quot;page_next&quot;</span>&gt;</span></span><br><span class="line">     下一页</span><br><span class="line">     <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;layui-icon layui-icon-right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<table>
-<thead>
-<tr>
-<th>组成</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>protocol</td>
-<td>通信协议 常用的http,ftp,maito等</td>
-</tr>
-<tr>
-<td>host</td>
-<td>主机(域名) <a target="_blank" rel="noopener" href="http://www.itheima.com/">www.itheima.com</a></td>
-</tr>
-<tr>
-<td>port</td>
-<td>端口号 可选 ，省略时使用方案的默认端口 如http的默认端口为80</td>
-</tr>
-<tr>
-<td>path</td>
-<td>路径 由 零或多个’&#x2F;‘符号隔开的字符串，一般用来表示主机上的一个目录或文件地址</td>
-</tr>
-<tr>
-<td>query</td>
-<td>参数 以键值对的形式，通过&amp;符号分隔开来</td>
-</tr>
-<tr>
-<td>fragment</td>
-<td>片段 #后面内容 常见于链接 锚点</td>
-</tr>
-</tbody></table>
-<h2 id="location对象的属性"><a href="#location对象的属性" class="headerlink" title="location对象的属性"></a>location对象的属性</h2><table>
-<thead>
-<tr>
-<th>location对象属性</th>
-<th>返回值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>location.href</td>
-<td>获取或者设置 整个URL</td>
-</tr>
-<tr>
-<td>location.host</td>
-<td>返回主机(域名) <a target="_blank" rel="noopener" href="http://www.itheima.com/">www.itheima.com</a></td>
-</tr>
-<tr>
-<td>location.port</td>
-<td>返回端口号 如果未写返回 空字符串</td>
-</tr>
-<tr>
-<td>location.pathname</td>
-<td>返回路径</td>
-</tr>
-<tr>
-<td>location.search</td>
-<td>返回参数</td>
-</tr>
-<tr>
-<td>location.hash</td>
-<td>返回片段 #后面内容 常见于链接 锚点</td>
-</tr>
-</tbody></table>
-<p>&#x3D;&#x3D;重要记住：href和search&#x3D;&#x3D;</p>
+<p>css代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;//unpkg<span class="selector-class">.com</span>/layui<span class="keyword">@2</span>.6.8/dist/css/layui.css&quot; media=<span class="string">&quot;all&quot;</span>&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    #info &#123;</span><br><span class="line">      <span class="attribute">text-align</span>: center;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-id">#info</span> <span class="selector-tag">th</span> &#123;</span><br><span class="line">      <span class="attribute">text-align</span>: center;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.pagination</span> &#123;</span><br><span class="line">      <span class="attribute">display</span>: flex;</span><br><span class="line">      <span class="attribute">text-align</span>: center;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.active</span> &#123;</span><br><span class="line">      <span class="attribute">color</span>: red;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.pagination</span> <span class="selector-tag">a</span>,</span><br><span class="line">    <span class="selector-class">.page_box</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">      <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.page_box</span> &#123;</span><br><span class="line">      <span class="attribute">text-align</span>: center;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.page_box</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">      <span class="attribute">display</span>: inline-block;</span><br><span class="line">      <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">      <span class="attribute">border</span>: <span class="number">1px</span> solid;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>js代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> initArr = [] <span class="comment">//承接数据的数组</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">init</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="comment">// 获取数据+渲染</span></span><br><span class="line">   <span class="comment">// 获取数据</span></span><br><span class="line">    <span class="comment">// 一些请求操作...</span></span><br><span class="line">    <span class="keyword">var</span> data = 请求过来的数据</span><br><span class="line">    <span class="comment">// 赋值 因为使用const声明不能直接修改变量的值，所以使用扩展运算符在地址指针不变的情况下修改数据</span></span><br><span class="line">    initArr.<span class="title function_">push</span>(...data)</span><br><span class="line">    <span class="comment">// 调用渲染</span></span><br><span class="line">    <span class="title function_">renderPage</span>(infoArr)</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">renderPage</span> = (<span class="params">renderArr</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> data = renderArr</span><br><span class="line">  <span class="comment">// 每页显示10条</span></span><br><span class="line">  <span class="keyword">const</span> pageSize = <span class="number">10</span></span><br><span class="line">  <span class="comment">// 定义当前页码和总页数</span></span><br><span class="line">  <span class="keyword">let</span> currentPage = <span class="number">1</span></span><br><span class="line">  <span class="keyword">let</span> totalPage = <span class="number">0</span></span><br><span class="line">  <span class="comment">// 总的数据</span></span><br><span class="line">  <span class="keyword">const</span> totalData = renderArr.<span class="property">length</span>;</span><br><span class="line">  totalPage = <span class="title class_">Math</span>.<span class="title function_">ceil</span>(totalData / pageSize)</span><br><span class="line">  <span class="comment">// 获取分页按钮的容器</span></span><br><span class="line">  <span class="keyword">const</span> paginationContainer = $(<span class="string">&#x27;.pagination&#x27;</span>);</span><br><span class="line">  <span class="comment">// 清空分页按钮</span></span><br><span class="line">  paginationContainer.<span class="title function_">html</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">  <span class="comment">// 添加数字按钮</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= totalPage; i++) &#123;</span><br><span class="line">    paginationContainer.<span class="title function_">append</span>(<span class="string">`&lt;li&gt;</span></span><br><span class="line"><span class="string">     &lt;a herf=&quot;#&quot;&gt;<span class="subst">$&#123;i&#125;</span>&lt;/a&gt;</span></span><br><span class="line"><span class="string">     &lt;/li&gt;`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">displayData</span>()</span><br><span class="line">  <span class="comment">// 分页按钮</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">displayData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 计算要显示的数据的起始位置和结束位置</span></span><br><span class="line">    <span class="keyword">const</span> start = (currentPage - <span class="number">1</span>) * pageSize;</span><br><span class="line">    <span class="keyword">const</span> end = <span class="title class_">Math</span>.<span class="title function_">min</span>(start + pageSize, totalData);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(start, end);</span><br><span class="line">    <span class="comment">// 获取要显示的数据</span></span><br><span class="line">    <span class="keyword">const</span> displayData = data.<span class="title function_">slice</span>(start, end);</span><br><span class="line">    <span class="comment">// 显示数据</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">var</span> xml = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    displayData.<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">      xml += item</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&#x27;#page_main&#x27;</span>).<span class="title function_">html</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    $(<span class="string">&#x27;#page_main&#x27;</span>).<span class="title function_">append</span>(xml)</span><br><span class="line">    <span class="comment">// 上一页按钮点击事件</span></span><br><span class="line">  &#125;</span><br><span class="line">  $(<span class="string">&#x27;.pagination li&#x27;</span>).<span class="title function_">unbind</span>().<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    e.<span class="title function_">preventDefault</span>()</span><br><span class="line">    currentPage = <span class="built_in">parseInt</span>($(<span class="variable language_">this</span>).<span class="property">context</span>.<span class="property">outerText</span>);</span><br><span class="line">    <span class="title function_">displayData</span>();</span><br><span class="line">  &#125;)</span><br><span class="line">  $(<span class="string">&#x27;#page_prev&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    e.<span class="title function_">preventDefault</span>();</span><br><span class="line">    <span class="keyword">if</span> (currentPage &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">      currentPage = <span class="number">1</span></span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">&#x27;已经是第一页了&#x27;</span>)</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    currentPage--;</span><br><span class="line">    <span class="title function_">displayData</span>();</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 下一页按钮点击事件</span></span><br><span class="line">  $(<span class="string">&#x27;#page_next&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    e.<span class="title function_">preventDefault</span>();</span><br><span class="line">    <span class="keyword">if</span> (currentPage &gt;= totalPage) &#123;</span><br><span class="line">      currentPage = totalPage</span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">&#x27;已经是最后一页了&#x27;</span>)</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    currentPage++;</span><br><span class="line">    <span class="title function_">displayData</span>();</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">formatData</span> = (<span class="params">arr</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> arr.<span class="title function_">map</span>(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 将数据处理成你想要的样子然后处理</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">`&lt;tr&gt;</span></span><br><span class="line"><span class="string">    &lt;td&gt;<span class="subst">$&#123;index + <span class="number">1</span>&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">    &lt;td&gt;<span class="subst">$&#123;item.xx&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">    &lt;td&gt;<span class="subst">$&#123;item.xx&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">    &lt;td&gt;<span class="subst">$&#123;item.xx&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">    &lt;td&gt;<span class="subst">$&#123;item.xx&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">  &lt;/tr&gt;`</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">init</span>()</span><br></pre></td></tr></table></figure>
+
+<p>ps:建议在数据量小的时候使用，数据量大时建议使用后端分页</p>
 
                 
             </div>
@@ -475,7 +422,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhongyucc.github.io/2023/03/14/JavaScript-location/">http://zhongyucc.github.io/2023/03/14/JavaScript-location/</a>
+                    <a href="http://zhongyucc.github.io/2023/03/28/JavaScript-paging/">http://zhongyucc.github.io/2023/03/28/JavaScript-paging/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -519,6 +466,10 @@
                             
                                 <a href="/tags/JavaScript/">
                                     <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
+                                <a href="/tags/demo/">
+                                    <span class="chip bg-color">demo</span>
                                 </a>
                             
                         </div>
@@ -597,17 +548,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/16/CPP-EleManager-system/">
+                <a href="/2023/03/28/JavaScript-paging/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="CPP_职工管理系统">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="JavaScript_paging">
                         
-                        <span class="card-title">CPP_职工管理系统</span>
+                        <span class="card-title">JavaScript_paging</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -617,30 +569,35 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C++
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/demo/">
-                        <span class="chip bg-color">demo</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/demo/">
+                        <span class="chip bg-color">demo</span>
                     </a>
                     
                 </div>
@@ -654,13 +611,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/13/CPP-core/">
+                <a href="/2023/03/23/Vue3-change/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="CPP_核心编程">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Vue3.0的优化">
                         
-                        <span class="card-title">CPP_核心编程</span>
+                        <span class="card-title">Vue3.0的优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -671,14 +628,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category">
-                                    C++
+                            <a href="/categories/Vue3/" class="post-category">
+                                    Vue3
                                 </a>
                             
                             
@@ -688,12 +645,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                     <a href="/tags/%E8%BF%9B%E9%98%B6/">
                         <span class="chip bg-color">进阶</span>
+                    </a>
+                    
+                    <a href="/tags/Vue3/">
+                        <span class="chip bg-color">Vue3</span>
                     </a>
                     
                 </div>
